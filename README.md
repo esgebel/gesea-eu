@@ -19,17 +19,22 @@ Endoscopy requires both psychomotor and surgical skills. It is vital that these 
 
 The Gynaecological Endoscopic Surgical Education and Assessment (GESEA) programme is a structured educational programme for Gynaecological Endoscopy. It trains and certifies **knowledge** and **practical skills** prior to **surgical competence**.
 
-### Knowledge
-
-Knowledge is trained through e-learning materials available on ESGE Academy. The acquisition of knowledge is assessed through online quizzes.
-
-### Psychomotor Skills
-
-A series of well defined exercises on laparoscopy, laparoscopic suturing, hysteroscopy and robotics train the psychomotor skills of GESEA participants.
-
-### Surgical Competence
-
-Surgical competence is measured through assessment of standardised procedures by expert review.
+<div class="row">
+  <div class="container">
+    <div class="col-4">
+      <img scr="/gesea-eu/assets/gesea-knowledge.png" width="300" height="300" alt="Knowledge" />
+      <p>Knowledge is trained through e-learning materials available on ESGE Academy. The acquisition of knowledge is assessed through online quizzes.</p>
+    </div>
+    <div class="col-4">
+      <img scr="/gesea-eu/assets/gesea-skills.png" width="300" height="300" alt="Psychomotor Skills" />
+      <p>A series of well defined exercises on laparoscopy, laparoscopic suturing, hysteroscopy and robotics train the psychomotor skills of GESEA participants.</p>
+    </div>
+    <div class="col-4">
+      <img scr="/gesea-eu/assets/gesea-surgical.png" width="300" height="300" alt="Surgical Competence" />
+      <p>Surgical competence is measured through assessment of standardised procedures by expert review.</p>
+    </div>
+  </div>
+</div>
 
 ## What do you want to become?
 
@@ -59,11 +64,3 @@ Become a Gynaecological Robotics Surgeon
 - esgo
 - sergs
 - esge
-
-[Training Tools](#)
-[Terms of Use](#)
-[Privacy Policy](#)
-[Cookie Policy](#)
-[Academy HQ](#)
-
-
