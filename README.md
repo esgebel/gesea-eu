@@ -1,5 +1,6 @@
 ---
-title: GESEA Educational Programme – Structured educational programme for Gynaecological Endoscopy
+title: Your universal entry gate to becoming a gynaecological surgeon
+description: Structured training and assessment programme
 permalink: /
 cover: /gesea-eu/assets/hands.jpg
 ---
