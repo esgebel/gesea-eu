@@ -1,0 +1,21 @@
+title: GESEA Educational Programme
+description: GESEA Educational Programme – Structured educational programme for Gynaecological Endoscopy
+show_downloads: false
+lsi: false
+safe: true
+source: /
+incremental: false
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+toc:
+  enabled: true
+
+ordered_collections:
+  - pages
+
+collections:
+  pages:
+    output: true
+
+page_width: 1200px
