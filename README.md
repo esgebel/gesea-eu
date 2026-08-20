@@ -4,11 +4,6 @@ permalink: /
 cover: /gesea-eu/assets/hands.jpg
 ---
 
-Your universal entry gate to becoming a gynaecological surgeon
-Structured training and assessment programme
-
-[Get Started Now](/)
-
 ## Why the GESEA educational platform?
 
 Endoscopy requires both psychomotor and surgical skills. It is vital that these **psychomotor skills** are trained and tested in a safe environment prior to training in the OR. It improves patient care and greatly increases **educational efficiency** and **surgical competence** of the surgeon.
