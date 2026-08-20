@@ -1,11 +1,11 @@
 ---
 ---
 
+@import "{{ site.theme }}";
+
 .page-header {
   color: #fff;
   text-align: center;
   background-color: #102a43;
   background-image: url("/gesea-eu/assets/hands.jpg"), linear-gradient(135deg, rgba(16,42,67,0.95), rgba(56,190,201,0.75));
 }
-
-@import "{{ site.theme }}";
