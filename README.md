@@ -60,7 +60,7 @@ Become a Gynaecological Robotics Surgeon
 
 ## Supported by
 
-- eshre
-- esgo
-- sergs
-- esge
+![eshre](/gesea-eu/assets/logos-eshre-300x300.jpg)
+![esgo](/gesea-eu/assets/logos-esgo-300x300.jpg)
+![sergs](/gesea-eu/assets/logos-sergs-300x300.jpg)
+![esge](/gesea-eu/assets/logos-esge.jpg)
