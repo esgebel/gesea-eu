@@ -56,11 +56,13 @@ Become a Gynaecological Robotics Surgeon
 
 > Organised in the GESEA Diploma and Training Centres
 
-[All upcoming sessions](https://esge.org/events/)
+<a href="https://esge.org/events/" target="_blank">All upcoming sessions</a>
 
 ## Supported by
 
-![eshre](/gesea-eu/assets/logos-eshre-300x300.jpg)
-![esgo](/gesea-eu/assets/logos-esgo-300x300.jpg)
-![sergs](/gesea-eu/assets/logos-sergs-300x300.jpg)
-![esge](/gesea-eu/assets/logos-esge.jpg)
+<div>
+    <img alt="eshre" src="/gesea-eu/assets/logos-eshre-300x300.jpg" width="300px" height="auto"/>
+    <img alt="esgo" src="/gesea-eu/assets/logos-esgo-300x300.jpg" width="300px" height="auto"/>
+    <img alt="sergs" src="/gesea-eu/assets/logos-sergs-300x300.jpg" width="300px" height="auto"/>
+    <img alt="esge" src="/gesea-eu/assets/logos-esge.jpg" width="300px" height="auto"/>
+</div>
