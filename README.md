@@ -11,7 +11,7 @@ Endoscopy requires both psychomotor and surgical skills. It is vital that these 
 
 ### To learn more, simply click on the desired level in the GESEA Pathway graphic below.
 
-![pathway-image](#)
+![pathway-image](/gesea-eu/assets/vertical-grid.png)
 
 ## What is the GESEA Educational Programme?
 
