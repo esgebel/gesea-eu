@@ -1,0 +1,139 @@
+# ============================================================
+# HOME PAGE TEXT
+# Change the words between the quotes. Keep the indentation.
+# Text marked "markdown" can use **bold**, *italic* and [links](https://...).
+# ============================================================
+
+hero:
+  label: "GYNAECOLOGICAL ENDOSCOPIC SURGICAL EDUCATION AND ASSESSMENT"
+  title: "The Pathway to Surgical Excellence."
+  text: "Structured education, assessment and certification in gynaecological endoscopic surgery."
+  buttons:
+    - label: "Explore the pathway"
+      url: "#pathway"
+      style: solid
+    - label: "Start Level 1 e-learning"
+      url: "https://academy.esge.org/"
+
+philosophy:
+  label: "THE GESEA PHILOSOPHY"
+  title_line_1: "Train first."
+  title_line_2: "Operate when ready."
+  text: "Endoscopy requires both psychomotor and surgical skills. GESEA trains and tests them in a safe environment before training in the Operating Room."
+  items:
+    - kicker: "I · KNOWLEDGE"
+      title: "Knowledge"
+      text: "Trained through e-learning materials on ESGE Academy and assessed through online quizzes."
+    - kicker: "II · PSYCHOMOTOR SKILLS"
+      title: "Skills"
+      text: "A series of well-defined exercises in laparoscopy, laparoscopic suturing, hysteroscopy and robotics."
+    - kicker: "III · SURGICAL COMPETENCE"
+      title: "Surgical competence"
+      text: "Measured through assessment of standardised procedures by expert review."
+
+osp:
+  label: "THE ONLINE SCORING PLATFORM · OSP"
+  title: "Your GESEA progress, recorded in one place."
+  text: "The Online Scoring Platform records GESEA training and certification results and compares them with the GESEA benchmark. You use it alongside your training at a GESEA centre."
+  button_label: "Go to the OSP"
+  url: "https://osp.gesea.eu/"
+  button_note: "Opens osp.gesea.eu in a new tab"
+  tabs:
+    - key: doctors
+      label: "For doctors"
+      # Screenshot file in assets/img/osp/ - leave empty to show the placeholder frame.
+      screenshot: ""
+      screenshot_caption: "Your personal dashboard: training runs, exam results and certificates"
+      items:
+        - title: "See your training and exam results"
+          text: "Every training run and exam you take at a GESEA centre is recorded in your own account."
+        - title: "Get your report against the benchmark"
+          text: "Your results are compared with the GESEA benchmark, so you can see how close you are to exam level."
+        - title: "Keep your certificates together"
+          text: "Your GESEA certificates and your progress across the levels, in one place."
+    - key: centres
+      label: "For centres"
+      screenshot: ""
+      screenshot_caption: "The centre dashboard: sessions, participants and statistics"
+      items:
+        - title: "Set up training and exam sessions"
+          text: "Mentors create sessions and register their participants."
+        - title: "Score on the spot with a QR code"
+          text: "A trainer scans the participant's QR code with a phone and enters the result. It appears on the platform straight away."
+        - title: "Follow your centre's activity"
+          text: "A dashboard with your activities, statistics and users."
+
+pathway:
+  label: "THE GESEA PATHWAY"
+  title: "Your journey. Your specialisation. Your future."
+  text: "Explore the GESEA educational pathway and discover the training and certification stages."
+  hint: "Scroll to advance, or select any stage."
+  # The words inside each stage are in _data/pathway.yml
+
+assessment:
+  label: "EDUCATION & ASSESSMENT"
+  title: "Knowledge. Practice. Competence."
+  text: "Each GESEA level combines theory, hands-on practice and assessment within one structured framework."
+  steps:
+    - number: "STEP 1"
+      title: "The theoretical foundation"
+      text: "Each level starts on ESGE Academy, with tutorials and quizzes that lead to a certificate of completion. Certification includes a theoretical exam of multiple-choice questions on instrumentation, OR organisation, anatomy, endoscopic techniques and complication management."
+      tags: ["ESGE Academy", "TESTT1", "TESTT2"]
+    - number: "STEP 2"
+      title: "Psychomotor skills, trained safely"
+      text: "Practise with the GESEA Training Tools at your own centre, at an accredited GESEA Training or Diploma Centre, or at congresses where GESEA is present. Practical exams test laparoscopy, suturing and hysteroscopy, with robotic skills exercises for the Robotics pathway."
+      tags: ["LASTT", "SUTT", "HYSTT", "SSRT"]
+      link_label: "GESEA Training Tools"
+      link_url: "https://gesea.eu/training-tools"
+    - number: "STEP 3"
+      title: "Competence, reviewed by experts"
+      text: "At diploma stage, surgical skills are evaluated through standardised laparoscopic and hysteroscopic procedures. Each is scheduled in advance, recorded and submitted for expert review."
+      tags: ["Video-based", "Expert-reviewed"]
+
+certification:
+  label: "CERTIFICATION"
+  title: "A structured path to certification."
+  text: "Certificates confirm knowledge and psychomotor skills. Diplomas validate surgical competence."
+  # The four programmes are in _data/certification.yml
+
+centres:
+  label: "TRAINING CENTRES"
+  title: "Where training meets practice."
+  text: "Accredited GESEA Diploma Centres and Training Centres host training and certification sessions around the world."
+  source_note: "Centre list as published on esge.org/gesea-centres."
+  buttons:
+    - label: "View all GESEA Centres"
+      url: "/centres/"
+      style: solid
+    - label: "Find training & certification sessions"
+      url: "https://esge.org/events/"
+    - label: "Become an accredited centre"
+      url: "https://gesea.eu/accredited-gesea-centres/"
+
+community:
+  label: "THE GESEA COMMUNITY"
+  title: "Advancing surgical education together."
+  text: "Connecting structured education, expert assessment and professional development in gynaecological endoscopy."
+  supported_title: "Supported by Europe's societies in gynaecology and reproductive medicine."
+  societies:
+    - name: ESGE
+      url: "http://esge.org/"
+    - name: ESHRE
+      url: "https://www.eshre.eu/"
+    - name: ESGO
+      url: "https://esgo.org/"
+    - name: SERGS
+      url: "https://www.sergs.org/"
+  social_label: "Follow GESEA on Instagram"
+  social_url: "https://www.instagram.com/gesea_programme/"
+
+final:
+  label: "YOUR NEXT STEP"
+  title: "Your journey starts here."
+  text: "Explore the GESEA educational programme and take the next step in your surgical training."
+  buttons:
+    - label: "Explore the GESEA pathway"
+      url: "#pathway"
+      style: solid
+    - label: "Get started"
+      url: "https://academy.esge.org/"

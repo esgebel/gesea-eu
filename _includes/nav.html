@@ -1,0 +1,26 @@
+{%- assign nav = site.data.navigation -%}
+<header class="nav" id="nav">
+  <div class="in wrap">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="GESEA home">
+      <img id="navLogo" src="{{ '/assets/img/logo/gesea-logo.png' | relative_url }}" alt="GESEA Educational Programme" width="113" height="46">
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {%- for item in nav.main %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.nav_active and item.url == page.nav_active %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- endfor %}
+        <li class="util"><a href="{{ nav.osp_login.url }}" target="_blank" rel="noopener">{{ nav.osp_login.label }} <span aria-hidden="true">↗</span></a></li>
+        <li><a class="cta" href="{{ nav.cta.url | relative_url }}">{{ nav.cta.label }}</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet">Menu</button>
+  </div>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button id="sheetClose">Close</button>
+  {%- for item in nav.main %}
+  <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+  {%- endfor %}
+  <a href="{{ nav.cta.url | relative_url }}">{{ nav.cta.label }}</a>
+  <a href="{{ nav.osp_login.url }}" target="_blank" rel="noopener" style="font-size:18px;color:var(--ink-2);margin-top:14px">{{ nav.osp_login.label }} ↗</a>
+</div>

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- assign c = page -%}
+{%- assign all = site.centres | sort: "country" -%}
+{%- for x in all -%}{%- if x.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign last = all.size | minus: 1 -%}
+{%- if idx == 0 -%}{%- assign prev = all[last] -%}{%- else -%}{%- assign pi = idx | minus: 1 -%}{%- assign prev = all[pi] -%}{%- endif -%}
+{%- if idx == last -%}{%- assign next = all[0] -%}{%- else -%}{%- assign ni = idx | plus: 1 -%}{%- assign next = all[ni] -%}{%- endif -%}
+{%- assign body = content | strip -%}
+<main id="app" data-centre="{{ page.slug }}" data-city="{{ c.city | escape }}" data-country="{{ c.country | escape }}" data-lat="{{ c.lat }}" data-lng="{{ c.lng }}">
+  <section class="band"><div class="in wrap" style="padding-bottom:clamp(52px,8vh,76px)">
+    <div class="dhero">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">›</span><a href="{{ '/centres/' | relative_url }}">GESEA Centres</a><span aria-hidden="true">›</span><span>{{ c.name }}</span></nav>
+        <div class="meta"><span class="badge plain">{% if c.type == 'training' %}Training Centre{% elsif c.type == 'robotics' %}Diploma centre · Robotics{% else %}Diploma centre{% endif %}</span><span class="loc">{% include icon.html name="pin" %}{{ c.city }}, {{ c.country }}</span></div>
+        <h1>{{ c.title | default: c.name }}</h1>
+        <div class="acts">
+          <a class="btn solid sm" href="#sessions">See sessions</a>
+          {% if c.website != "" %}<a class="btn sm" href="{{ c.website }}" target="_blank" rel="noopener">Centre website {% include icon.html name="ext" %}</a>{% endif %}
+        </div>
+      </div>
+      {% if c.logo != "" %}<div class="lgcard"><img src="{{ c.logo | relative_url }}" alt="{{ c.name | escape }} logo"></div>{% endif %}
+    </div>
+  </div></section>
+  <div class="wrap">
+    <div id="nextbar"></div>
+    <div class="dcols">
+      <section class="about" aria-labelledby="ab">
+        <h2 id="ab">About the centre</h2>
+        {% if body == "" %}<p class="note">Content placeholder: no centre description has been published yet. To be supplied by the centre.</p>{% else %}{{ content }}{% endif %}
+        {% if c.video %}<p><a class="btn sm" href="{{ c.video }}" target="_blank" rel="noopener">{% include icon.html name="play" %} Watch the centre video</a></p>{% endif %}
+      </section>
+      <aside class="rail">
+        <div class="rcard"><h3>Contact</h3>
+          {%- for e in c.email %}<div class="ci"><span class="dot">{% include icon.html name="mail" %}</span><div><a href="mailto:{{ e }}">{{ e }}</a></div></div>{% endfor %}
+          {%- for p in c.phone %}<div class="ci"><span class="dot">{% include icon.html name="tel" %}</span><div>{{ p }}</div></div>{% endfor %}
+          {%- if c.contact_address %}{% assign ca = c.contact_address %}{% else %}{% assign ca = c.address %}{% endif %}
+          <div class="ci"><span class="dot">{% include icon.html name="pin" %}</span><div>{{ ca | join: "<br>" }}</div></div>
+          {%- if c.website != "" %}<div class="ci"><span class="dot">{% include icon.html name="web" %}</span><div><a href="{{ c.website }}" target="_blank" rel="noopener">{{ c.website | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a></div></div>{% endif %}
+          {%- if c.email.size == 0 and c.phone.size == 0 %}<p class="note" style="margin:10px 0 0;font-size:12px">No email or phone is published for this centre yet.</p>{% endif %}
+        </div>
+        {% if c.team.size > 0 %}<div class="rcard"><h3>Centre team</h3>
+          {%- for t in c.team %}<div class="tm"><span class="av" data-initials="{{ t.name | escape }}"></span><div><b>{{ t.name }}</b><small>{{ t.role }}</small></div></div>{% endfor %}
+        </div>{% endif %}
+        <div class="rcard mapcard"><svg id="cmap" viewBox="0 0 300 180" role="img" aria-label="Map showing {{ c.city | escape }}, {{ c.country | escape }}"></svg>
+          <div class="cap"><b>Centre address</b><span>{{ c.address | join: ", " }}</span>
+          <a href="https://www.openstreetmap.org/?mlat={{ c.lat }}&amp;mlon={{ c.lng }}&amp;zoom=15" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a></div></div>
+      </aside>
+    </div>
+    <section class="sess" id="sessions" aria-labelledby="sh">
+      <div class="shead"><div><h2 id="sh">Training &amp; certification sessions</h2><p>Sessions held at {{ c.name }}, from the <a href="{{ site.sessions.calendar_url }}" target="_blank" rel="noopener" style="color:var(--blue)">ESGE Educational Calendar</a><span id="srcNote"></span></p></div>
+        <div class="tabs" role="group" aria-label="Session period"><button data-tab="up" aria-pressed="true">Upcoming · <span id="nUp">…</span></button><button data-tab="past" aria-pressed="false">Past · <span id="nPast">…</span></button></div></div>
+      <div class="slist" id="slist"><div class="srow" style="grid-template-columns:1fr"><div class="dd">Loading sessions from the ESGE Educational Calendar…</div></div></div>
+    </section>
+    <div class="dfoot">
+      <a href="{{ '/centres/' | relative_url }}">← All GESEA Centres</a>
+      <span style="display:flex;gap:22px;flex-wrap:wrap"><a href="{{ prev.url | relative_url }}">‹ {{ prev.name }}</a><a href="{{ next.url | relative_url }}">{{ next.name }} ›</a></span>
+    </div>
+  </div>
+</main>

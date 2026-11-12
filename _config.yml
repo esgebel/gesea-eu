@@ -1,21 +1,49 @@
-title: GESEA Educational Programme
-description: GESEA Educational Programme – Structured educational programme for Gynaecological Endoscopy
-show_downloads: false
-lsi: false
-safe: true
-source: /
-incremental: false
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme
-toc:
-  enabled: true
+# ============================================================
+# GESEA website - site settings
+# After changing this file, GitHub rebuilds the site automatically (1-2 minutes).
+# ============================================================
 
-ordered_collections:
-  - pages
+title: "GESEA Educational Programme"
+description: "Structured education, assessment and certification in gynaecological endoscopic surgery."
 
+# The address of the site.
+# GitHub project page (e.g. https://esge.github.io/gesea-website/): url = https://esge.github.io , baseurl = /gesea-website
+# Own domain (e.g. https://gesea.eu): url = https://gesea.eu , baseurl = ""
+url: "https://esgebel.github.io"
+baseurl: "/gesea-eu"
+
+# Sessions on the centre pages are read live from the ESGE Educational Calendar.
+# If the calendar cannot be reached, the site uses assets/data/sessions-snapshot.json instead.
+sessions:
+  live_api: "https://www.esge.org/wp-json/tribe/events/v1/events"
+  calendar_url: "https://esge.org/events/"
+  only_gesea: true          # only show events with "GESEA" in the title, category or organiser
+
+# Each centre is one file in the _centres folder.
 collections:
-  pages:
+  centres:
     output: true
+    permalink: /centres/:name/
 
-page_width: 1200px
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Every file in _centres/ automatically uses the centre page design.
+defaults:
+  - scope:
+      path: ""
+      type: centres
+    values:
+      layout: centre
+      css: centres
+      nav_active: /centres/
+      scripts: [centres]
+      scripts_cdn:
+        - https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js

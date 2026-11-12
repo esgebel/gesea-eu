@@ -1,0 +1,38 @@
+# Main menu. Order here = order on the website.
+# "url" can be a section of the home page (/#pathway), a page (/centres/) or a full web address.
+
+main:
+  - label: The Programme
+    url: /#programme
+  - label: GESEA Pathway
+    url: /#pathway
+  - label: Certification
+    url: /#certification
+  - label: GESEA Centres
+    url: /centres/
+
+# Small link on the right of the menu, opens in a new tab.
+osp_login:
+  label: OSP Log in
+  url: https://osp.gesea.eu/
+
+# Button at the far right of the menu.
+cta:
+  label: Get Started
+  url: /#start
+
+footer:
+  copyright: "© 2026 GESEA Educational Programme"
+  links:
+    - label: Training Tools
+      url: https://gesea.eu/training-tools
+    - label: Partners
+      url: https://gesea.eu/partners/
+    - label: GESEA4EU
+      url: https://gesea.eu/gesea4eu/
+    - label: Terms of Use
+      url: https://gesea.eu/terms-of-use
+    - label: Privacy
+      url: https://gesea.eu/privacy-policy
+    - label: Cookies
+      url: https://gesea.eu/cookie-policy

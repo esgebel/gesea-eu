@@ -1,0 +1,14 @@
+{%- assign f = site.data.navigation.footer -%}
+{%- if include.variant == "home" -%}
+<footer class="foot">
+  <span>{{ f.copyright }}</span>
+  <nav aria-label="Footer">{% for l in f.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}</nav>
+</footer>
+{%- else -%}
+<footer class="foot">
+  <div class="in wrap">
+    <span>{{ f.copyright }} · Centre content from esge.org</span>
+    <nav aria-label="Footer"><a href="{{ site.sessions.calendar_url }}" target="_blank" rel="noopener">Educational Calendar</a>{% for l in f.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}</nav>
+  </div>
+</footer>
+{%- endif -%}

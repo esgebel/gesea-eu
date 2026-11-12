@@ -1,0 +1,47 @@
+# ============================================================
+# CERTIFICATION - the four programmes that open one by one while scrolling.
+# tag   - small blue word next to the name (optional, e.g. OPTIONAL)
+# facts - label / value rows. Write "placeholder" as the value to show a yellow "to be confirmed" note.
+# links - the first link is shown as the filled button.
+# ============================================================
+
+programmes:
+  - name: "GESEA MIGS"
+    text: "The diploma for the Minimal Invasive Gynaecological Surgeon, issued by the ESGE. Surgical skills are evaluated in a video-based, expert-reviewed assessment of laparoscopic and hysteroscopic procedures."
+    facts:
+      - ["ROUTE", "Level 1 → Level 2 MIGS → MIGS Diploma"]
+      - ["ISSUED BY", "ESGE"]
+      - ["REQUIRES", "Level 2 MIGS Certificate · ESGE membership"]
+    links:
+      - ["Explore MIGS", "https://gesea.eu/pathways/migs/"]
+      - ["Apply for the diploma", "https://esge.org/education/migs-diploma"]
+
+  - name: "GESEA ECRES"
+    text: "The diploma for the Reproductive Endoscopic Surgeon, issued by ESHRE. Surgical skills are evaluated in a video-based, expert-reviewed assessment of laparoscopic and hysteroscopic procedures."
+    facts:
+      - ["ROUTE", "Level 1 → Level 2 ECRES → ECRES Diploma"]
+      - ["ISSUED BY", "ESHRE"]
+      - ["REQUIRES", "Level 2 ECRES Certificate · ESHRE membership"]
+    links:
+      - ["Explore ECRES", "https://gesea.eu/pathways/ecres/"]
+      - ["Apply via ESHRE", "https://www.eshre.eu/Accreditation-and-Certification/ECRES"]
+
+  - name: "GESEA ROBOTICS"
+    tag: "OPTIONAL"
+    text: "An additional, optional step after Level 2 MIGS or ECRES. The Robotics Certificate combines a theoretical exam with robotic skills exercises. The Robotics Diploma is under development."
+    facts:
+      - ["ROUTE", "Level 2 MIGS or ECRES → Robotics Certificate → Robotics Diploma"]
+      - ["CERTIFICATE", "TESTT2 (25 questions) · SSRT"]
+      - ["DIPLOMA", "Under development"]
+    links:
+      - ["Explore Robotics", "https://gesea.eu/pathways/robotics/"]
+
+  - name: "EXPERT LEVEL"
+    text: "Advanced specialisation after the MIGS or ECRES diploma. The MIGS track opens Oncology, Urogynaecology, Neuropelveology, Endometriosis and Hysteroscopy. The ECRES track opens Endometriosis, Hysteroscopy and Reproductive surgeon."
+    facts:
+      - ["ROUTE", "GESEA MIGS or ECRES Diploma → Expert Level Diploma"]
+      - ["DISCIPLINES", "Six in total, by track"]
+      - ["REQUIRES", "placeholder"]
+    links:
+      - ["Oncology", "https://gesea.eu/pathways/gesea-migs-oncology/"]
+      - ["Urogynaecology", "https://gesea.eu/pathways/gesea-migs-urogynaecology/"]
