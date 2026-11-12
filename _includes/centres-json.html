@@ -1,0 +1,5 @@
+{%- comment -%} All centres as JSON, for the maps, the globe and the sessions. {%- endcomment -%}
+{%- assign cs = site.centres | sort: "country" -%}
+[{%- for c in cs -%}
+{"slug":{{ c.slug | jsonify }},"name":{{ c.name | jsonify }},"city":{{ c.city | jsonify }},"country":{{ c.country | jsonify }},"type":{{ c.type | jsonify }},"lat":{{ c.lat | jsonify }},"lng":{{ c.lng | jsonify }},"url":{{ c.url | relative_url | jsonify }},"keywords":{{ c.calendar_keywords | jsonify }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}]

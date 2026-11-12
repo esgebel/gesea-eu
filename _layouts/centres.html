@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- assign list = site.centres | sort: "country" -%}
+{%- assign countries = list | map: "country" | uniq -%}
+<main id="app">
+  <section class="band"><div class="in wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">›</span><span>{{ page.title }}</span></nav>
+    <h1>{{ page.title }}</h1>
+    <p class="sub">{{ page.subtitle }}</p>
+  </div></section>
+  <section class="wrap">
+    <div class="intro">
+      <div class="l">
+        <img src="{{ '/assets/img/logo/gesea-logo.png' | relative_url }}" alt="GESEA Educational Programme">
+        <h2>{{ page.intro_title }}</h2>
+        <a style="color:var(--blue);font-size:14px;font-weight:500;text-decoration:none" href="{{ site.sessions.calendar_url }}" target="_blank" rel="noopener">{{ page.intro_link }} →</a>
+      </div>
+      <div class="r">{{ content }}</div>
+    </div>
+    <div class="filters">
+      <div class="frow"><span class="k">CENTRE TYPE</span>
+        <div class="ftop"><div class="chips" id="fType">
+          <button class="chip" data-v="all" aria-pressed="true">All types</button><button class="chip" data-v="diploma" aria-pressed="false">Diploma centre</button><button class="chip" data-v="training" aria-pressed="false">Training Centre</button>
+        </div><span class="count" id="count">Showing <b>{{ list.size }}</b> of {{ list.size }} centres</span></div></div>
+      <div class="frow"><span class="k">COUNTRY</span><div class="chips" id="fCountry">
+        <button class="chip" data-v="all" aria-pressed="true">All</button>{% for c in countries %}<button class="chip" data-v="{{ c | escape }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+      </div></div>
+    </div>
+    <div class="grid" id="grid">
+      {%- for c in list %}
+      <a class="card" href="{{ c.url | relative_url }}" data-slug="{{ c.slug }}" data-type="{{ c.type }}" data-country="{{ c.country | escape }}" style="animation-delay:{% if forloop.index0 < 12 %}{{ forloop.index0 | times: 40 }}{% else %}480{% endif %}ms">
+        <div class="top"><div class="lg">{% if c.logo != "" %}<img src="{{ c.logo | relative_url }}" alt="" loading="lazy">{% endif %}</div><span class="badge{% if c.type == 'training' %} t{% endif %}">{% if c.type == 'training' %}Training Centre{% else %}Diploma centre{% endif %}</span></div>
+        <div><h3>{{ c.name }}</h3><div class="loc">{% include icon.html name="pin" %}{{ c.city }}, {{ c.country }}</div></div>
+        <div class="next" hidden>{% include icon.html name="cal" %}<span>Next session · <b></b></span></div>
+        <div class="foot"><span>Discover</span><span class="ar">→</span></div>
+      </a>
+      {%- endfor %}
+      <p class="empty" id="empty" hidden>No centres match these filters.</p>
+    </div>
+  </section>
+</main>

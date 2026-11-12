@@ -1,0 +1,189 @@
+# ============================================================
+# GESEA PATHWAY - text shown when a stage is selected
+# Each stage has:
+#   kicker  - small blue line above the title
+#   title   - stage name
+#   text    - short description
+#   facts   - label / value rows (optional)
+#   note    - yellow note for missing content (optional)
+#   links   - buttons to official pages (optional)
+#   options - buttons that open other stages (optional, use the stage keys)
+#
+# The shape of the diagram (boxes, arrows, positions) is in assets/js/pathway.js
+# and should only be changed together with the developer.
+# ============================================================
+
+stages:
+  l1:
+    kicker: "LEVEL 1 · PSYCHOMOTOR SKILLS ASSESSMENT CERTIFICATE"
+    title: "Level 1 Certificate"
+    text: "Proves general endoscopic knowledge and basic endoscopic psychomotor skills, so you are ready to start training in the Operating Room. Level 1 is shared by every pathway."
+    facts:
+      - ["PREREQUISITE", "GESEA Level 1 e-learning on ESGE Academy, with its Certificate of Completion"]
+      - ["THEORY", "TESTT1: 50 multiple-choice questions on instrumentation, OR organisation, anatomy, endoscopic techniques and complication management"]
+      - ["PRACTICAL", "LASTT1 · SUTT1 · HYSTT1"]
+      - ["WHERE", "An accredited GESEA Diploma Centre or an official GESEA event"]
+    links:
+      - ["Level 1 details", "https://gesea.eu/pathways/migs/#level-1"]
+      - ["Level 1 e-learning", "https://academy.esge.org/"]
+
+  l2:
+    kicker: "LEVEL 2 · PSYCHOMOTOR SKILLS ASSESSMENT CERTIFICATE"
+    title: "Level 2 Certificate"
+    text: "Level 2 follows Level 1 and is taken on the MIGS or the ECRES track. Both certificates confirm the knowledge and more advanced psychomotor skills needed to start performing basic endoscopic procedures in the Operating Room."
+    facts:
+      - ["MIGS TRACK", "TESTT2 · LASTT2 · SUTT2 · HYSTT2, at a GESEA Diploma Centre, GESEA event or the ESGE Annual Congress"]
+      - ["ECRES TRACK", "TESTT2 on reproductive endoscopic surgery · LASTT2 · SUTT2 · HYSTT2, at GESEA ECRES events"]
+    options: [l2m, l2e]
+
+  l2m:
+    kicker: "LEVEL 2 · MIGS TRACK"
+    title: "Level 2 MIGS Certificate"
+    text: "Shows you have mastered the knowledge and more advanced psychomotor skills needed to start performing basic endoscopic procedures in the Operating Room."
+    facts:
+      - ["PREREQUISITE", "GESEA Level 1 Certificate or an approved Level 1 bypass, verified through the Online Scoring Platform (OSP)"]
+      - ["E-LEARNING", "GESEA Level 1 and Level 2 MIGS modules on ESGE Academy"]
+      - ["THEORY", "TESTT2: 50 multiple-choice questions"]
+      - ["PRACTICAL", "LASTT2 · SUTT2 · HYSTT2"]
+      - ["WHERE", "An accredited GESEA Diploma Centre, an official GESEA event or the ESGE Annual Congress"]
+    links:
+      - ["Level 2 MIGS details", "https://gesea.eu/pathways/migs/#level-2"]
+      - ["Apply for a bypass", "https://osp.gesea.eu/"]
+
+  l2e:
+    kicker: "LEVEL 2 · ECRES TRACK"
+    title: "Level 2 ECRES Certificate"
+    text: "Shows you have mastered the knowledge and more advanced psychomotor skills needed to start performing basic endoscopic procedures related to reproductive endoscopic surgery."
+    facts:
+      - ["PREREQUISITE", "GESEA Level 1 Certificate. Bypass applications go to ESHRE"]
+      - ["E-LEARNING", "GESEA Level 2 ECRES e-learning on ESGE Academy"]
+      - ["THEORY", "TESTT2: 50 multiple-choice questions on reproductive endoscopic surgery"]
+      - ["PRACTICAL", "LASTT2 · SUTT2 · HYSTT2"]
+      - ["WHERE", "Upcoming GESEA ECRES events"]
+    links:
+      - ["Level 2 ECRES details", "https://gesea.eu/pathways/ecres/#level-2"]
+      - ["ECRES events", "https://www.eshre.eu/Accreditation-and-Certification/ECRES"]
+
+  migs:
+    kicker: "SURGICAL SKILLS ASSESSMENT DIPLOMA · MIGS"
+    title: "GESEA MIGS Diploma"
+    text: "Minimal Invasive Gynaecological Surgeon, issued by the ESGE. A video-based, expert-reviewed diploma: surgical skills are evaluated by performing a select number of laparoscopic and hysteroscopic procedures."
+    facts:
+      - ["PREREQUISITES", "Level 2 MIGS Certificate · ESGE membership, individually or through a corporate member society"]
+      - ["COMPETENCE", "Documented surgical clinical practice curriculum covering a maximum period of 5 years"]
+      - ["ASSESSMENT", "Five procedures, each scheduled in advance, recorded and submitted within 48 hours for expert review"]
+    links:
+      - ["MIGS Diploma details", "https://gesea.eu/pathways/migs/#diploma"]
+      - ["Apply via ESGE", "https://esge.org/education/migs-diploma"]
+
+  ecres:
+    kicker: "SURGICAL SKILLS ASSESSMENT DIPLOMA · ECRES"
+    title: "GESEA ECRES Diploma"
+    text: "Reproductive Endoscopic Surgeon, issued by ESHRE. A video-based, expert-reviewed diploma: surgical skills are evaluated by performing a select number of laparoscopic and hysteroscopic procedures."
+    facts:
+      - ["PREREQUISITES", "Level 2 ECRES Certificate · ESHRE membership"]
+      - ["COMPETENCE", "Documented surgical clinical practice curriculum covering a maximum period of 5 years"]
+      - ["ASSESSMENT", "Five procedures, each scheduled in advance, recorded and submitted within 48 hours for expert review"]
+    links:
+      - ["ECRES Diploma details", "https://gesea.eu/pathways/ecres/#diploma"]
+      - ["Apply via ESHRE", "https://www.eshre.eu/Accreditation-and-Certification/ECRES"]
+
+  robc:
+    kicker: "OPTIONAL · PSYCHOMOTOR SKILLS ASSESSMENT CERTIFICATE"
+    title: "GESEA Robotics Certificate"
+    text: "An additional step, not obligatory. Shows you have mastered the knowledge and advanced psychomotor skills needed to start performing basic endoscopic procedures with a robot."
+    facts:
+      - ["PREREQUISITE", "Level 1 and Level 2 MIGS or ECRES certificates, or an approved bypass"]
+      - ["E-LEARNING", "GESEA e-learning for all levels, plus the GESEA Robotics module"]
+      - ["THEORY", "TESTT2: 25 multiple-choice questions"]
+      - ["PRACTICAL", "Robotic skills exercises (SSRT)"]
+    links:
+      - ["Robotics pathway", "https://gesea.eu/pathways/robotics/"]
+
+  robd:
+    kicker: "OPTIONAL · SURGICAL SKILLS ASSESSMENT DIPLOMA"
+    title: "GESEA Robotics Diploma"
+    text: "Diploma of Gynaecological Robotics Surgeon. The Robotics Diploma is currently under development."
+    facts:
+      - ["PREREQUISITES", "GESEA Robotics Certificate · ESGE membership"]
+    links:
+      - ["Robotics pathway", "https://gesea.eu/pathways/robotics/"]
+
+  expM:
+    kicker: "EXPERT LEVEL · MIGS TRACK"
+    title: "Expert Level Diploma · MIGS"
+    text: "Follows the GESEA MIGS Diploma and leads into advanced disciplines."
+    facts:
+      - ["DISCIPLINES", "Oncology · Urogynaecology · Neuropelveology · Endometriosis · Hysteroscopy"]
+    note: "Content placeholder: Expert Level requirements and assessment format to be confirmed with the GESEA team."
+    links:
+      - ["Oncology", "https://gesea.eu/pathways/gesea-migs-oncology/"]
+      - ["Urogynaecology", "https://gesea.eu/pathways/gesea-migs-urogynaecology/"]
+
+  expE:
+    kicker: "EXPERT LEVEL · ECRES TRACK"
+    title: "Expert Level Diploma · ECRES"
+    text: "Follows the GESEA ECRES Diploma and leads into advanced disciplines."
+    facts:
+      - ["DISCIPLINES", "Endometriosis · Hysteroscopy · Reproductive surgeon"]
+    note: "Content placeholder: Expert Level requirements and assessment format to be confirmed with the GESEA team."
+    links:
+      - ["ECRES pathway", "https://gesea.eu/pathways/ecres/"]
+
+# The six Expert Level disciplines, top to bottom in the diagram.
+# track: migs | ecres | both
+disciplines:
+  - name: "Oncology"
+    track: migs
+    link: "https://gesea.eu/pathways/gesea-migs-oncology/"
+  - name: "Urogynaecology"
+    track: migs
+    link: "https://gesea.eu/pathways/gesea-migs-urogynaecology/"
+  - name: "Neuropelveology"
+    track: migs
+  - name: "Endometriosis"
+    track: both
+  - name: "Hysteroscopy"
+    track: both
+  - name: "Reproductive surgeon"
+    track: ecres
+
+discipline_text: "An Expert Level discipline in the GESEA programme."
+discipline_missing_note: "Content placeholder: the programme page for this discipline is not yet published on gesea.eu."
+
+# Text shown while scrolling through the diagram, one block per step.
+steps:
+  - label: "Overview"
+    kicker: "OVERVIEW"
+    title: "From certificate to diploma."
+    text: "The pathway has two stages. Psychomotor skills are assessed for a certificate. Surgical skills are assessed for a diploma. Scroll to follow the route."
+  - label: "Level 1"
+    kicker: "STAGE 1 · CERTIFICATE"
+    title: "Level 1 Certificate"
+    text: "Proves general endoscopic knowledge and basic endoscopic psychomotor skills, so you are ready to start training in the Operating Room. Level 1 is shared by every pathway."
+    options: [l1]
+  - label: "Level 2"
+    kicker: "STAGE 2 · CERTIFICATE"
+    title: "Level 2 Certificate"
+    text: "Level 2 follows Level 1 and is taken on the MIGS or the ECRES track. It confirms the more advanced psychomotor skills needed to start performing basic endoscopic procedures."
+    options: [l2m, l2e]
+  - label: "Diplomas"
+    kicker: "STAGE 3 · DIPLOMA"
+    title: "GESEA MIGS or GESEA ECRES"
+    text: "With the necessary surgical experience and competence, apply for a video-based, expert-reviewed diploma: GESEA MIGS, issued by the ESGE, or GESEA ECRES, issued by ESHRE."
+    options: [migs, ecres]
+  - label: "Robotics"
+    kicker: "STAGE 4 · OPTIONAL"
+    title: "GESEA Robotics"
+    text: "The Robotics Certificate and Diploma are optional. They connect to Level 2 and to the MIGS and ECRES diplomas. The Robotics Diploma is under development."
+    options: [robc, robd]
+  - label: "Expert Level"
+    kicker: "STAGE 5 · EXPERT LEVEL"
+    title: "Expert Level Diploma"
+    text: "Each diploma leads on to an Expert Level diploma. MIGS opens Oncology, Urogynaecology, Neuropelveology, Endometriosis and Hysteroscopy. ECRES opens Endometriosis, Hysteroscopy and Reproductive surgeon."
+    options: [expM, expE]
+  - label: "Full pathway"
+    kicker: "THE COMPLETE PATHWAY"
+    title: "Select your specialisation"
+    text: "Select any stage to read its requirements and open the official programme page."
+    options: [l1, l2, migs, ecres, robc, robd, expM, expE]

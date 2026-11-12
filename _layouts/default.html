@@ -1,67 +1,25 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-
-{% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid top-navigation">
-        <a class="navbar-brand" href="#"><img class="py-2" height="auto" width="200px" src="/gesea-eu/assets/gesea-programme.svg" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Centres</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Partners</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Sessions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">GESEA4EU</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <button class="btn btn-primary"><a href="#">Get started now</a></button>
-    </header>
-
-    <main id="content" class="main-content" role="main">
-      
-      {{ content }}
-
-      <footer class="site-footer text-center">
-           <ul class="list-inline">
-             <li class="list-inline-item"><a href="">Training Tools</a></li>
-             <li class="list-inline-item"><a href="">Terms of Use</a></li>
-             <li class="list-inline-item"><a href="">Privacy Policy</a></li>
-             <li class="list-inline-item"><a href="">Cookie Policy</a></li>
-             <li class="list-inline-item"><a href="">Academy HQ</a></li>
-           </ul>
-      </footer>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include nav.html %}
+{{ content }}
+{% unless page.layout == "home" %}{% include footer.html %}{% endunless %}
+<script>
+window.GESEA_SITE = {
+  base: {{ "" | relative_url | jsonify }},
+  sessions: {{ site.sessions | jsonify }},
+  centres: {% include centres-json.html %}
+};
+</script>
+{%- for s in page.scripts_cdn %}
+<script src="{{ s }}"></script>
+{%- endfor %}
+<script src="{{ '/assets/js/common.js' | relative_url }}"></script>
+{%- for s in page.scripts %}
+<script src="{{ '/assets/js/' | append: s | append: '.js' | relative_url }}"></script>
+{%- endfor %}
+</body>
 </html>

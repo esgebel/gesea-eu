@@ -1,0 +1,41 @@
+{%- assign o = site.data.home.osp -%}
+<!-- OSP -->
+<section class="osp" id="osp" aria-labelledby="chOsp">
+  <div class="wrap">
+    <div class="osp-panel">
+      <div class="osp-copy">
+        <span class="label">{{ o.label }}</span>
+        <h2 class="fade" id="chOsp">{{ o.title }}</h2>
+        <p>{{ o.text }}</p>
+        <div class="osp-tabs" role="tablist" aria-label="Who is it for">
+          {%- for t in o.tabs %}
+          <button role="tab" id="ospT{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="ospP{{ forloop.index }}" data-k="{{ t.key }}"{% unless forloop.first %} tabindex="-1"{% endunless %}>{{ t.label }}</button>
+          {%- endfor %}
+        </div>
+        {%- for t in o.tabs %}
+        <ol class="osp-list swap" id="ospP{{ forloop.index }}" role="tabpanel" aria-labelledby="ospT{{ forloop.index }}" data-k="{{ t.key }}"{% unless forloop.first %} hidden{% endunless %}>
+          {%- for it in t.items %}
+          <li><span class="n">{{ forloop.index }}</span><div><b>{{ it.title }}</b><span>{{ it.text }}</span></div></li>
+          {%- endfor %}
+        </ol>
+        {%- endfor %}
+        <div class="osp-acts">
+          <a class="btn solid" href="{{ o.url }}" target="_blank" rel="noopener">{{ o.button_label }} <span class="ar">↗</span></a>
+          <small>{{ o.button_note }}</small>
+        </div>
+      </div>
+      <figure class="osp-shot fade" style="margin:0">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ o.url | remove: 'https://' | remove: '/' }}</span></div>
+        {%- for t in o.tabs %}
+        <div class="osp-shot-item" data-k="{{ t.key }}"{% unless forloop.first %} hidden{% endunless %}>
+          {%- if t.screenshot != "" %}
+          <img src="{{ t.screenshot | relative_url }}" alt="{{ t.screenshot_caption }}" style="display:block;width:100%">
+          {%- else %}
+          <div class="ph"><div><b>Screenshot: {{ t.screenshot_caption }}</b><span style="font-size:12px">Placeholder · add the file name under "screenshot" in _data/home.yml</span></div></div>
+          {%- endif %}
+        </div>
+        {%- endfor %}
+      </figure>
+    </div>
+  </div>
+</section>

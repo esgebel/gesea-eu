@@ -1,0 +1,190 @@
+---
+layout: default
+---
+{%- assign h = site.data.home -%}
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="lg" id="introLogo">
+    <img class="p1" src="{{ '/assets/img/logo/intro-p1.png' | relative_url }}" alt=""><img class="p2" src="{{ '/assets/img/logo/intro-p2.png' | relative_url }}" alt=""><img class="p3" src="{{ '/assets/img/logo/intro-p3.png' | relative_url }}" alt="">
+    <img class="wd" src="{{ '/assets/img/logo/intro-word.png' | relative_url }}" alt=""><img class="sb" src="{{ '/assets/img/logo/intro-sub.png' | relative_url }}" alt="">
+  </div>
+  <span class="skip">CLICK TO SKIP</span>
+</div>
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Introduction">
+  <canvas id="globe" aria-hidden="true"></canvas>
+  <div class="grid wrap">
+    <div class="hero-copy">
+      <span class="label fade">{{ h.hero.label }}</span>
+      <h1 class="h-xl fade">{{ h.hero.title }}</h1>
+      <p class="lead fade">{{ h.hero.text }}</p>
+      <div class="ctas fade">
+        {%- for b in h.hero.buttons %}
+        <a class="btn{% if b.style == 'solid' %} solid{% endif %}" href="{{ b.url }}"{% if b.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}{% if b.style == 'solid' %} <span class="ar">→</span>{% endif %}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="tinted" id="programme" aria-labelledby="ch1">
+  <div class="head wrap">
+    <span class="label">{{ h.philosophy.label }}</span>
+    <h2 class="h-l fade" id="ch1">{{ h.philosophy.title_line_1 }}<br>{{ h.philosophy.title_line_2 }}</h2>
+    <p class="lead fade">{{ h.philosophy.text }}</p>
+  </div>
+  <div class="trio wrap">
+    {%- for it in h.philosophy.items %}
+    <article class="fade"><span class="n">{{ it.kicker }}</span><h3>{{ it.title }}</h3><p>{{ it.text }}</p></article>
+    {%- endfor %}
+  </div>
+</section>
+
+{% include home/osp.html %}
+
+<!-- PATHWAY -->
+<section class="pathway" id="pathway" aria-labelledby="ch2">
+  <div class="pw-intro wrap">
+    <span class="label">{{ h.pathway.label }}</span>
+    <h2 class="h-l fade" id="ch2">{{ h.pathway.title }}</h2>
+    <p class="lead fade">{{ h.pathway.text }}</p>
+  </div>
+  <div class="pw-desktop">
+    <div class="pw-pin wrap" id="pwPin">
+      <div class="pw-top">
+        <ul class="stages" id="stages" aria-label="Pathway stages"></ul>
+        <span class="pw-count" id="pwCount">0 / 6</span>
+      </div>
+      <div class="pw-panel" aria-live="polite" data-lenis-prevent><div class="inner swap" id="pwPanel"></div></div>
+      <div class="pw-svgwrap"><svg class="pw-svg" id="pwSvg" viewBox="0 0 1460 712" role="group" aria-label="Interactive GESEA pathway diagram"></svg></div>
+      <div class="pw-hint">{{ h.pathway.hint }}</div>
+      <div class="pw-legend" aria-hidden="true"><span><i></i>MIGS · ESGE</span><span><i class="e"></i>ECRES · ESHRE</span><span><i class="r"></i>Robotics · optional</span><span><b class="sq"></b>Certificate</span><span><b class="sq d"></b>Diploma</span></div>
+    </div>
+  </div>
+  <div class="pw-mobile wrap">
+    <div class="pm" id="pm">
+      <div class="pm-switch" role="group" aria-label="Choose your Level 2 track">
+        <button aria-pressed="true" data-track="migs">MIGS track</button>
+        <button aria-pressed="false" data-track="ecres">ECRES track</button>
+      </div>
+      <div class="pm-track"><div class="pm-spine"><i id="pmSpine"></i></div><div id="pmItems"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & ASSESSMENT -->
+<section class="method tinted" id="method" aria-labelledby="ch3">
+  <div class="head wrap">
+    <span class="label">{{ h.assessment.label }}</span>
+    <h2 class="h-l fade" id="ch3">{{ h.assessment.title }}</h2>
+    <p class="lead fade">{{ h.assessment.text }}</p>
+  </div>
+  <div class="wrap">
+    <div class="steps">
+      {%- for s in h.assessment.steps %}
+      <div class="step fade">
+        <span class="n">{{ s.number }}</span>
+        <div><h3>{{ s.title }}</h3></div>
+        <div style="display:grid;gap:14px">
+          <p>{{ s.text }}</p>
+          <div class="tools">{% for tg in s.tags %}<span>{{ tg }}</span>{% endfor %}{% if s.link_url %}<a class="tlink" href="{{ s.link_url }}" target="_blank" rel="noopener" style="flex-basis:100%;width:max-content">{{ s.link_label }} <span class="ar">→</span></a>{% endif %}</div>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="cert" id="certification" aria-labelledby="ch4">
+  <div class="head wrap">
+    <span class="label">{{ h.certification.label }}</span>
+    <h2 class="h-l fade" id="ch4">{{ h.certification.title }}</h2>
+    <p class="lead fade">{{ h.certification.text }}</p>
+  </div>
+  <div class="wrap"><div class="cert-list" id="certList">
+    {%- for c in site.data.certification.programmes %}
+    <div class="cert-row{% if forloop.first %} open{% endif %}">
+      <button aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="cb{{ forloop.index }}"><span class="ix">0{{ forloop.index }}</span><span class="nm">{{ c.name }}{% if c.tag %}<span class="o">{{ c.tag }}</span>{% endif %}</span><span class="pl" aria-hidden="true">+</span></button>
+      <div class="cert-body" id="cb{{ forloop.index }}"><div><div class="in"><p>{{ c.text }}</p>
+        <div class="meta">{% for f in c.facts %}<div><span>{{ f[0] }}</span><b style="font-weight:400">{% if f[1] == "placeholder" %}<span class="placeholder-note">Placeholder: to be confirmed</span>{% else %}{{ f[1] }}{% endif %}</b></div>{% endfor %}</div>
+        <div class="acts">{% for l in c.links %}<a class="btn{% if forloop.first %} solid{% endif %}" href="{{ l[1] }}" target="_blank" rel="noopener">{{ l[0] }} <span class="ar">→</span></a>{% endfor %}</div>
+      </div></div></div>
+    </div>
+    {%- endfor %}
+  </div></div>
+</section>
+
+<!-- CENTRES -->
+<section class="centres tinted" id="centres" aria-labelledby="ch5">
+  <div class="head wrap">
+    <span class="label">{{ h.centres.label }}</span>
+    <h2 class="h-l fade" id="ch5">{{ h.centres.title }}</h2>
+    <p class="lead fade">{{ h.centres.text }}</p>
+  </div>
+  <div class="wrap">
+    <div class="map-wrap">
+      <div style="min-width:0">
+        <div class="map-bar">
+          <div class="seg" role="group" aria-label="Map view"><button aria-pressed="true" data-view="world">World</button><button aria-pressed="false" data-view="eu">Europe</button></div>
+          <div class="seg" role="group" aria-label="Centre type"><button aria-pressed="true" data-type="all">All</button><button aria-pressed="false" data-type="diploma">Diploma</button><button aria-pressed="false" data-type="training">Training</button></div>
+        </div>
+        <div class="map-box">
+          <svg class="map-svg" id="map" viewBox="0 0 1000 530" role="group" aria-label="World map of accredited GESEA centres">
+            <rect class="ocean" x="-2000" y="-2000" width="5000" height="5000"/>
+            {% include home/world-map-paths.svg %}
+            <g id="pts"></g>
+          </svg>
+          <div class="map-tip" id="mapTip" aria-live="polite"><span>Select a centre on the map or in the list.</span></div>
+        </div>
+        <div class="legend-dots"><span><i></i>Diploma centre</span><span><i class="t"></i>Training centre</span><span><i class="r"></i>GESEA Robotics centre</span></div>
+        <p class="src">{{ h.centres.source_note }}</p>
+      </div>
+      <div style="min-width:0">
+        <div class="clist" id="clist" aria-label="Accredited centres" data-lenis-prevent></div>
+        <div class="centre-ctas">
+          {%- for b in h.centres.buttons %}
+          <a class="btn{% if b.style == 'solid' %} solid{% endif %}" href="{% if b.url contains '://' %}{{ b.url }}{% else %}{{ b.url | relative_url }}{% endif %}"{% if b.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ b.label }} <span class="ar">→</span></a>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community" aria-labelledby="ch6">
+  <div class="head wrap">
+    <span class="label">{{ h.community.label }}</span>
+    <h2 class="h-l fade" id="ch6">{{ h.community.title }}</h2>
+    <p class="lead fade">{{ h.community.text }}</p>
+  </div>
+  <div class="comm wrap">
+    <div class="col-a fade"><h3 class="h-m">{{ h.community.supported_title }}</h3></div>
+    <div class="col-b fade">
+      <div class="supported">{% for s in h.community.societies %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }} <small>↗</small></a>{% endfor %}</div>
+      <a class="tlink" href="{{ h.community.social_url }}" target="_blank" rel="noopener" style="justify-self:start">{{ h.community.social_label }} <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="start" aria-labelledby="ch7">
+  <div class="wrap">
+    <div class="big">
+      <span class="label">{{ h.final.label }}</span>
+      <h2 class="h-xl fade" id="ch7">{{ h.final.title }}</h2>
+      <p class="lead fade">{{ h.final.text }}</p>
+      <div class="ctas fade">
+        {%- for b in h.final.buttons %}
+        <a class="btn{% if b.style == 'solid' %} solid{% endif %}" href="{{ b.url }}"{% if b.url contains '://' %} target="_blank" rel="noopener"{% endif %}>{{ b.label }} <span class="ar">→</span></a>
+        {%- endfor %}
+      </div>
+    </div>
+    {% include footer.html variant="home" %}
+  </div>
+</section>
+</main>
+<script>window.GESEA_PATHWAY = {{ site.data.pathway | jsonify }};</script>
