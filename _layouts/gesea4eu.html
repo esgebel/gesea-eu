@@ -1,0 +1,83 @@
+---
+layout: default
+---
+{%- comment -%}
+  GESEA4EU pages. Menus, lists and the bottom block come from _data/gesea4eu.yml.
+  page.kind chooses a special block: objectives | modules | partners | gallery (otherwise the page text is shown).
+{%- endcomment -%}
+{%- assign g = site.data.gesea4eu -%}
+{%- assign here = page.url -%}
+<main id="app">
+  <section class="band"><div class="in wrap pw-hero">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">›</span>{% if page.url == '/gesea4eu/' %}<span>{{ g.title }}</span>{% else %}<a href="{{ '/gesea4eu/' | relative_url }}">{{ g.title }}</a><span aria-hidden="true">›</span><span>{{ page.title }}</span>{% endif %}</nav>
+    <div class="g4-hero">
+      <div><h1>{{ g.title }}</h1><p class="sub">{{ g.tagline }}</p></div>
+      <div class="g4-logo"><img src="{{ g.logo | relative_url }}" alt="{{ g.logo_alt }}"></div>
+    </div>
+    <nav class="pw-tabs" aria-label="{{ g.title }}">
+      {%- for t in g.menu %}
+      <a href="{{ t.url | relative_url }}"{% if t.url == here or t.label == page.tab %} aria-current="page"{% endif %}>{{ t.label }}</a>
+      {%- endfor %}
+    </nav>
+  </div></section>
+
+  <section class="pw-sec"><div class="wrap">
+    {%- if page.tab == "Concept and Methodology" %}
+    <nav class="g4-sub" aria-label="Concept and Methodology">
+      {%- for s in g.submenu %}{% if s.group %}<span>{{ s.group }}</span>{% else %}<a href="{{ s.url | relative_url }}"{% if s.url == here %} aria-current="page"{% endif %}>{{ s.label }}</a>{% endif %}{% endfor %}
+    </nav>
+    {%- endif %}
+
+    {%- if page.kind == "modules" %}{% assign m = g.modules[page.modules] %}
+    {% include pathways/title.html title=page.heading subtitle=m.title %}
+    {% if m.intro %}<div class="g4-text rv"><p>{{ m.intro }}</p></div>{% endif %}
+    <div class="g4-text rv"><figure class="g4-fig"><img src="{{ m.figure | relative_url }}" alt="{{ m.caption }}" loading="lazy"><figcaption>{{ m.caption }}</figcaption></figure></div>
+    <ul class="g4-mods">
+      {%- for it in m.items %}
+      <li class="rv"><span class="code">{{ it.code }}</span><h3>{{ it.name }}</h3><p>{{ it.text }}</p><dl><div><dt>Type</dt><dd><span>{{ it.type }}</span></dd></div><div><dt>Applicable to</dt><dd>{% for a in it.applicable %}<span>{{ a }}</span>{% endfor %}</dd></div></dl></li>
+      {%- endfor %}
+    </ul>
+
+    {%- elsif page.kind == "objectives" %}
+    {% include pathways/title.html title=page.heading %}
+    <ol class="g4-obj">{% for o in g.objectives %}<li class="rv"><span class="pd-num">{{ forloop.index }}</span><div><b>Objective {{ forloop.index }}</b><p>{{ o }}</p></div></li>{% endfor %}</ol>
+
+    {%- elsif page.kind == "partners" %}
+    {% include pathways/title.html title=page.heading %}
+    <div class="g4-partners">
+      {%- for p in g.partners %}
+      {% if p.url %}<a class="rv" href="{{ p.url }}" target="_blank" rel="noopener"><img src="{{ p.logo | relative_url }}" alt="Partner logo" loading="lazy"></a>{% else %}<div class="rv"><img src="{{ p.logo | relative_url }}" alt="Partner logo" loading="lazy"></div>{% endif %}
+      {%- endfor %}
+    </div>
+
+    {%- elsif page.kind == "gallery" %}
+    {%- for a in g.gallery %}
+    <div class="g4-album rv"><h2>{{ a.title }}</h2>{{ a.text | markdownify }}<div class="g4-grid">
+      {%- for ph in a.photos %}<button type="button" aria-label="Open photo {{ forloop.index }} of {{ a.title | escape }}"><img src="{{ ph | relative_url }}" alt="{{ a.title | escape }}, photo {{ forloop.index }}" loading="lazy"></button>{% endfor %}
+    </div></div>
+    {%- endfor %}
+    <div class="g4-lb" id="g4lb" role="dialog" aria-label="Photo"><img alt=""><button class="x" aria-label="Close">×</button><button class="p" aria-label="Previous">‹</button><button class="n" aria-label="Next">›</button></div>
+
+    {%- elsif page.kind == "about" %}
+    {% include pathways/title.html title=page.heading %}
+    <div class="g4-about">
+      <div class="rv">{{ content }}</div>
+      {% if page.photo %}<figure class="g4-photo rv"><img src="{{ page.photo | relative_url }}" alt="{{ page.photo_alt }}"></figure>{% endif %}
+    </div>
+
+    {%- else %}
+    {% include pathways/title.html title=page.heading %}
+    <div class="g4-text rv">{{ content }}</div>
+    {%- endif %}
+  </div></section>
+
+  <section class="pw-sec pw-tint"><div class="wrap"><div class="g4-connect rv">
+    <h2>{{ g.connect.title }}</h2>
+    <div class="g4-social">
+      {%- for l in g.connect.links %}
+      <a {% include href.html url=l.url %}>{% include gesea4eu-icon.html name=l.icon %}{{ l.label }}</a>
+      {%- endfor %}
+    </div>
+    <div class="g4-fund"><img src="{{ g.connect.funding_image | relative_url }}" alt="{{ g.connect.funding_alt }}" loading="lazy"></div>
+  </div></div></section>
+</main>

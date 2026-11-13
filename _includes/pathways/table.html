@@ -1,0 +1,7 @@
+{%- comment -%} One requirement table from _data/pathways/tables.yml. include.key = table key, include.id = optional HTML id, include.on = true to show it. {%- endcomment -%}
+{%- assign t = site.data.pathways.tables[include.key] -%}
+<div class="pw-tbl {{ t.theme }}{% if include.on %} on{% endif %}"{% if include.id %} id="{{ include.id }}"{% endif %}><h4>{{ t.title }}{% if t.tag %} <span>{{ t.tag }}</span>{% endif %}</h4><dl>
+  {%- for r in t.rows %}
+  <div{% if r.key %} data-row="{{ r.key }}"{% endif %}><dt>{{ r.label }}</dt><dd>{% if r.title %}<b>{{ r.title }}</b>{% endif %}{{ r.text }}{% if r.split %}<span class="split">{% for s in r.split %}<span>{{ s }}</span>{% endfor %}</span>{% endif %}</dd></div>
+  {%- endfor %}
+</dl></div>

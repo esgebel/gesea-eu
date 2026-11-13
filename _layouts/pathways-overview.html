@@ -1,0 +1,109 @@
+---
+layout: default
+---
+{%- assign d = site.data.pathways.overview -%}
+{%- capture ck %}<svg class="ck" viewBox="0 0 24 24" aria-label="included"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>{% endcapture -%}
+<main id="app">
+  {% include pathways/hero.html tab="Overview" %}
+
+  <!-- WHAT IS GESEA -->
+  <section class="pw-sec pw-what" aria-labelledby="t1">
+    <div class="wrap">
+      {% include pathways/title.html id="t1" title=d.what_is.title subtitle=d.what_is.subtitle %}
+      <div class="pw-text rv">
+        <h3>{{ d.what_is.heading }}</h3>
+        <ul class="pw-list">{% for b in d.what_is.bullets %}<li><span>{% include md.html text=b inline=true %}</span></li>{% endfor %}</ul>
+        <p class="pw-lead">{% include md.html text=d.what_is.lead inline=true %}</p>
+      </div>
+
+      <div class="mx-stage">
+        <div class="mx-wrap">
+          <div class="mx" role="table" aria-label="GESEA levels">
+            <div class="mx-row mx-head" role="row"><span aria-hidden="true" style="border:0"></span>{% for c in d.matrix.columns %}<span role="columnheader">{{ c }}</span>{% endfor %}</div>
+            {%- for g in d.matrix.groups %}
+            {% if g.separator %}<div class="mx-sep" aria-hidden="true"></div>{% endif %}
+            <div class="mx-grp">
+              {% if g.level %}<div class="mx-lv">{{ g.level }}</div>{% endif %}
+              {%- for r in g.rows %}
+              <div class="mx-row r-{{ r.theme }}" role="row"><div class="mx-name"><span>{{ r.name }}</span></div>
+                {%- for c in r.cells -%}
+                  {%- assign pi = forloop.index0 | minus: 1 -%}{%- assign ni = forloop.index0 | plus: 1 -%}
+                  {%- assign prev = r.cells[pi] -%}{%- assign nxt = r.cells[ni] -%}
+                  {%- if c == "" -%}<div class="mx-gap"></div>
+                  {%- else -%}<div class="mx-c{% if forloop.last or nxt == '' %} end{% endif %}{% unless forloop.first %}{% if prev == '' %} start{% endif %}{% endunless %}"><span>{% if c == "check" %}{{ ck }}{% else %}{{ c }}{% endif %}</span></div>{%- endif -%}
+                {%- endfor -%}
+              </div>
+              {%- endfor %}
+            </div>
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="pw-sec pw-tint" aria-label="Knowledge, psychomotor skills and surgical competence">
+    <div class="wrap"><div class="pw-comp">
+      {%- for c in d.components %}
+      <article class="rv" style="--d:{{ forloop.index0 | times: 100 }}ms"><span class="pw-leaf">{{ c.label }}</span><p>{% include md.html text=c.text inline=true %}</p></article>
+      {%- endfor %}
+    </div></div>
+  </section>
+
+  <!-- PATHWAYS -->
+  <section class="pw-sec" aria-labelledby="t3">
+    <div class="wrap">
+      {% include pathways/title.html id="t3" title=d.pathways.title subtitle=d.pathways.subtitle %}
+      <p class="pw-intro rv">{{ d.pathways.intro }}</p>
+      <div class="pw-paths">
+        {%- for c in d.pathways.cards %}
+        {% if c.theme == "rob" %}<span class="pw-dots" aria-hidden="true"></span>{% endif %}
+        <a class="pw-path {{ c.theme }} rv" style="--d:{{ forloop.index0 | times: 100 }}ms" {% include href.html url=c.url %}><strong>{{ c.name }}</strong><span>{{ c.text }}</span><em class="go" aria-hidden="true">→</em></a>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVELS -->
+  <section class="pw-sec pw-tint" aria-labelledby="t4">
+    <div class="wrap">
+      {% include pathways/title.html id="t4" title=d.levels.title subtitle=d.levels.subtitle %}
+      <div class="pw-levels">
+        <nav class="pw-idx" aria-label="Levels">
+          <a href="#level-1" class="on"><i>1</i>Level 1</a><a href="#level-2"><i>2</i>Level 2</a><a href="#level-3"><i>3</i>Level 3</a>
+        </nav>
+        <div>
+          <p class="pw-rule rv">{{ d.levels.rule }}</p>
+          {%- assign L1 = d.levels.level_1 -%}
+          <article class="pw-lv" id="level-1">
+            <h3 class="rv">Level 1</h3>
+            <div class="rv">{% capture t %}{% include md.html text=L1.text %}{% endcapture %}{% if L1.highlight %}{% capture mk %}<span class="pw-mark">{{ L1.highlight }}</span>{% endcapture %}{{ t | replace: L1.highlight, mk }}{% else %}{{ t }}{% endif %}</div>
+            <div class="pw-tbls one rv">{% for k in L1.tables %}{% include pathways/table.html key=k on=true %}{% endfor %}</div>
+            <p class="rv">{{ L1.after }}</p>
+          </article>
+          {%- assign L2 = d.levels.level_2 -%}
+          <article class="pw-lv" id="level-2">
+            <h3 class="rv">Level 2</h3>
+            <div class="rv">{% include md.html text=L2.text %}</div>
+            <div class="pw-tbls rv">{% for k in L2.tables %}{% include pathways/table.html key=k on=true %}{% endfor %}</div>
+          </article>
+          {%- assign L3 = d.levels.level_3 -%}
+          <article class="pw-lv" id="level-3">
+            <h3 class="rv">Level 3</h3>
+            <div class="rv">{% include md.html text=L3.text %}</div>
+            <div class="pw-l3 rv">
+              {%- for col in L3.columns %}
+              <div class="col {{ col.theme }}"><h4><i></i>{{ col.title }}</h4>
+                {%- for it in col.items %}
+                <details class="pw-acc"{% if forloop.first %} open{% endif %}><summary>{{ it.name }}</summary><dl><div><dt>E-learning</dt><dd><ul><li>{{ L3.common_elearning }}</li><li>{{ it.elearning }}</li></ul></dd></div><div><dt>Experience</dt><dd>{{ it.experience }}</dd></div><div><dt>Diploma</dt><dd><b>{{ it.diploma }}</b></dd></div></dl></details>
+                {%- endfor %}
+              </div>
+              {%- endfor %}
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

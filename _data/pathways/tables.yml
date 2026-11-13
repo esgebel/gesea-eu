@@ -1,0 +1,66 @@
+# ============================================================
+# REQUIREMENT TABLES used on the Pathways pages.
+# Each table has a key (l1, l2_migs, ...) that the pages refer to.
+#   title - name above the table
+#   tag   - small coloured word on the right (optional)
+#   theme - colour: l1 | migs | ecres | rob
+#   rows  - one row per line:
+#       label - left column
+#       title - bold first line on the right (optional)
+#       text  - normal text on the right (optional)
+#       split - small notes under the text (optional)
+#       key   - used by the pages to highlight a row, do not change
+# ============================================================
+
+l1:
+  title: "Level 1"
+  theme: l1
+  rows:
+    - { label: "E-learning", title: "Level 1 E-learning" }
+    - { label: "Psychomotor skills", text: "LASTT1, SUTT1, HYSTT1" }
+    - { label: "Certification", title: "Level 1 Certification", text: "TESTT 1, LASTT1, SUTT1, HYSTT1" }
+
+l2_migs:
+  title: "Level 2"
+  tag: "MIGS"
+  theme: migs
+  rows:
+    - { label: "E-learning", title: "Level 2 MIGS E-learning", key: el }
+    - { label: "Psychomotor skills", text: "LASTT2, SUTT2, HYSTT 2", key: ps }
+    - { label: "Certification", title: "Level 2 MIGS Certification", text: "TESTT 2 MIGS, LASTT2, SUTT2, HYSTT2", key: cert }
+    - { label: "Experience", text: "YEP exchange / GESEA MIGS Fellowship", key: exp }
+    - { label: "Diploma", title: "Level 2 MIGS DIPLOMA", split: ["Experience as first surgeon", "Expert review of 5 procedures"], key: dip }
+
+l2_ecres:
+  title: "Level 2"
+  tag: "ECRES"
+  theme: ecres
+  rows:
+    - { label: "E-learning", title: "Level 2 ECRES E-learning", key: el }
+    - { label: "Psychomotor skills", text: "LASTT2, SUTT2, HYSTT 2", key: ps }
+    - { label: "Certification", title: "Level 2 ECRES Certification", text: "TESTT 2 ECRES, LASTT2, SUTT2, HYSTT2", key: cert }
+    - { label: "Experience", text: "Laparoscopic and hysteroscopic interventions as first surgeon (max period of 5yrs)", key: exp }
+    - { label: "Diploma", title: "Level 2 ECRES DIPLOMA", split: ["Review of 5 laparoscopic and 5 hysteroscopic procedures"], key: dip }
+
+# Robotics table as shown on the Overview page (with "Level 2")
+robotics_l2:
+  title: "Robotics"
+  tag: "OPTIONAL"
+  theme: rob
+  rows:
+    - { label: "E-learning", title: "Level 2 Robotics E-learning" }
+    - { label: "Psychomotor skills", text: "Simulator Exercises ROSTT" }
+    - { label: "Certification", title: "Level 2 Robotics Certification", text: "TESTT 2 R, ROSTT" }
+    - { label: "Experience", text: "Fundamental robotics Tasks (CMTT) / Mentored Robotic training" }
+    - { label: "Diploma", title: "Level 2 ROBOTICS DIPLOMA", split: ["Experience as first surgeon", "Expert review of Robotic hysterectomy"] }
+
+# Robotics table as shown on the MIGS, ECRES and Robotics pages
+robotics:
+  title: "Robotics"
+  theme: rob
+  rows:
+    - { label: "E-learning", title: "Robotics E-learning", key: el }
+    - { label: "Psychomotor skills", text: "Simulator Exercises ROSTT", key: ps }
+    - { label: "Certification", title: "Robotics Certification", text: "TESTT 2 R, ROSTT", key: cert }
+    - { label: "Experience", text: "Fundamental robotics Tasks (CMTT) / Mentored Robotic training", key: exp }
+    - { label: "Diploma", title: "ROBOTICS DIPLOMA", split: ["Experience as first surgeon", "Expert review of Robotic hysterectomy"], key: dip }

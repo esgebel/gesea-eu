@@ -5,11 +5,13 @@ main:
   - label: The Programme
     url: /#programme
   - label: GESEA Pathway
-    url: /#pathway
+    url: /pathways/
   - label: Certification
     url: /#certification
   - label: GESEA Centres
     url: /centres/
+  - label: GESEA4EU
+    url: /gesea4eu/
 
 # Small link on the right of the menu, opens in a new tab.
 osp_login:

@@ -1,0 +1,57 @@
+# ============================================================
+# GESEA EXPERT LEVEL UROGYNAECOLOGY DIPLOMA  (website address: /pathways/gesea-migs-urogynaecology/)
+# Same structure as _data/pathways/oncology.yml (see the notes at the top of that file).
+# ============================================================
+
+title: "GESEA Expert Level Urogynaecology Diploma"
+
+logos:
+  - { src: "/assets/img/pathways/esge.png", alt: "European Society for Gynaecological Endoscopy (ESGE)" }
+
+prerequisites:
+  title: "Prerequisites for Expert Level Urogynaecology Diploma"
+  items:
+    - title: "GESEA MIGS Diploma"
+
+steps:
+  - title: "Provide documented testimony"
+    text: "You must provide your documented testimony of [surgical clinical practice curriculum](https://www.esge.org/wp-content/uploads/2025/12/GESEA-Expert-Level-Urogynaecology-Diploma-1.pdf) covering the 5 years after completion of specialty training [(upload here)](https://www.esge.org/gesea-expert-level-urogynaecology-expert-diploma/){: .pd-up}"
+
+  - title: "Expert review of Surgical Procedure"
+    lead: "Prerequisites"
+    text: "GESEA MIGS Diploma [(upload here)](https://www.esge.org/gesea-expert-level-urogynaecology-diploma-gesea-migs-diploma-upload/){: .pd-up}"
+
+  - title: "GESEA Expert Level 3 Urogynaecology eLearning module"
+    text: "Purchase the [GESEA Expert Level Urogynaecology eLearning module](https://academy.esge.org/) and complete the module (certificate of completion once all lectures are viewed)"
+
+  - title: "Apply for an Observership"
+    text: |
+      [Apply for an Observership](https://www.esge.org/step-by-step-application-process-for-observership-gesea-expert-level-urogynaecology-diploma/) at an ESGE approved centre
+
+      - Period of attachment 4 weeks (within one year) and minimum one week per centre
+      - For applicant working in an existing centre, 2 weeks must be in a different centre
+    note: "Costs vary for different centres, check at the time of application. Please note that the programme fee does not include any additional costs related to the observership, such as hospital administration fees, travel, accommodation or meals"
+    after: "Provide certificate of completion of observership [(upload here)](https://www.esge.org/gesea-expert-level-urogynaecology-diploma-certificate-of-completion-of-observership-upload/){: .pd-up}"
+
+  - title: "Submit Procedural Videos"
+    lead: "Submit Procedural Videos for Expert Peer Review"
+    text: |
+      [Submit the schedule of the following procedures:](https://www.esge.org/gesea-expert-level-urogynaecology-diploma-schedule-a-procedure/)
+
+      - Laparoscopic Sacrocolpopexy
+      - Laparoscopic Pectopexy
+      - Lateral Suspension (LS)
+
+      Stating the date when you will perform the actual procedure, you cannot use existing recorded material
+    button: { label: "Submit your video procedure here", url: "https://www.esge.org/gesea-expert-level-urogynaecology-diploma-submit-video/" }
+
+fee:
+  title: "Fee for GESEA Expert Level Urogynaecology Diploma"
+  head: ["Payment Module", "Total Amount", "€1000,00*"]
+  criteria: "Criteria to enter (*Laparoscopic Hysterectomy)"
+  rows:
+    - ["Access to the GESEA Expert Level 3 - Urogynaecology eLearning", "1st Payment", "€200,00"]
+    - ["Application for an Observership", "2nd Payment", "€200,00"]
+    - ["Completion of Observership", "3rd Payment", "€200,00"]
+    - ["Submission of video", "4th Payment", "€400,00"]
+  note: "Please note that the programme fee does not include any additional costs related to the observership, such as hospital administrative fees, travel, accommodation, or meals."
