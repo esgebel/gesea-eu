@@ -1,0 +1,9 @@
+{%- comment -%}
+  Turns text from a _data file into HTML.
+  Markdown is allowed: **bold**, *italic*, [link text](https://...), lists.
+  Links starting with / stay on this website; links starting with http open in a new tab.
+  Use inline=true for one line of text (no paragraph around it).
+{%- endcomment -%}
+{%- assign _b = '](' | append: site.baseurl | append: '/' -%}
+{%- assign _h = include.text | replace: '](/', _b | markdownify | replace: '<a href="http', '<a target="_blank" rel="noopener" href="http' -%}
+{%- if include.inline -%}{{ _h | remove: '<p>' | remove: '</p>' | strip }}{%- else -%}{{ _h }}{%- endif -%}

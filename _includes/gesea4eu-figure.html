@@ -1,0 +1,1 @@
+<figure class="g4-fig">{% if include.title %}<h4>{{ include.title }}</h4>{% endif %}<img src="{{ include.src | relative_url }}" alt="{{ include.title | default: include.caption }}" loading="lazy">{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}</figure>

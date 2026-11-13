@@ -1,0 +1,216 @@
+/* Pathway detail pages (MIGS, ECRES, Robotics) and Expert Level diploma pages.
+   Loaded after centres.css and pathways.css. */
+
+.pd-hero h1{font-size:clamp(34px,4.4vw,56px)}
+.pd-lead{text-align:center;max-width:860px;margin:-28px auto clamp(36px,6vh,56px);font-size:clamp(15px,1.1vw,16.5px);color:var(--ink-2)}
+.pd-lead a{color:var(--blue);font-weight:500;text-underline-offset:3px}
+.pd-sec{scroll-margin-top:84px}
+
+/* ---------- journey: steps on the left, matching table on the right ---------- */
+.pd-journey{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);max-width:1200px;margin-inline:auto;align-items:start}
+.pd-steps{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:12px}
+.pd-steps::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:var(--line)}
+.pd-step{position:relative}
+.pd-step>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;width:100%;cursor:pointer;padding:12px 18px 12px 0;border-radius:16px;transition:background .4s var(--ease)}
+.pd-step>button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.pd-num{position:relative;z-index:1;width:56px;height:56px;border-radius:0 28px 0 28px;display:grid;place-items:center;font-size:22px;font-weight:600;background:var(--tint);color:var(--blue);transition:background .4s var(--ease),color .4s var(--ease),transform .5s var(--ease)}
+.pd-step.rob .pd-num{background:#F5E8F1;color:var(--rob-2)}
+.pd-st{display:grid;gap:2px}
+.pd-st b{font-size:clamp(17px,1.4vw,20px);font-weight:600;color:var(--deep);line-height:1.3}
+.pd-st small{font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--rob-2)}
+.pd-body{display:grid;gap:8px;padding:0 18px 0 74px;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .5s var(--ease),padding .5s var(--ease)}
+.pd-body p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.pd-body p a{color:var(--blue);font-weight:500;text-underline-offset:3px}
+.pd-more{justify-self:start;display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:500;color:var(--blue);text-decoration:none}
+.pd-step{border-radius:16px;transition:background .4s var(--ease),box-shadow .5s var(--ease)}
+.pd-step.on{background:var(--white);box-shadow:0 18px 40px -26px rgba(0,57,107,.45),0 0 0 1px var(--card-line)}
+.pd-step.on .pd-num{background:var(--blue);color:var(--white);transform:scale(1.04)}
+.pd-step.rob.on .pd-num{background:var(--rob-2)}
+.pd-step.on .pd-body{max-height:420px;opacity:1;padding-bottom:18px}
+.pd-step:not(.on)>button:hover{background:rgba(231,246,254,.6)}
+
+.pd-panel{position:sticky;top:96px}
+.pd-panel .pw-tbl{display:none}
+.pd-panel .pw-tbl.on{display:block;animation:pdIn .5s var(--ease) both}
+.pd-panel .pw-tbl.rob{width:100%}
+@keyframes pdIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.pw-tbl dl>div.hl{background:linear-gradient(90deg,var(--tint-2),transparent);box-shadow:inset 3px 0 0 var(--c);padding-left:12px}
+@media (max-width:900px){
+  .pd-journey{grid-template-columns:1fr}
+  .pd-panel{position:static}
+}
+
+/* ---------- section head blocks ---------- */
+.pd-alt{background:var(--tint-2)}
+.pw-title .pd-sub2{margin-top:10px;font-size:15px;color:var(--ink-2)}
+.pw-title .pd-sub2 a{color:var(--blue);font-weight:500;text-underline-offset:3px}
+
+/* ---------- prerequisites box ---------- */
+.pd-pre{max-width:1000px;margin:0 auto clamp(40px,6vh,64px);background:var(--white);border:1px solid var(--card-line);border-radius:18px;padding:clamp(22px,3vw,40px)}
+.pd-alt .pd-pre{background:var(--white)}
+.pd-sec:not(.pd-alt) .pd-pre{background:var(--tint-2)}
+.pd-pre>h3{font-size:clamp(18px,1.5vw,21px);font-weight:600;color:var(--ecres-2);margin-bottom:18px;letter-spacing:-.005em}
+.pd-req{display:grid;grid-template-columns:20px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.pd-req:first-of-type{border-top:0;padding-top:0}
+.pd-req::before{content:"";width:16px;height:16px;margin-top:4px;border-radius:0 8px 0 8px;background:var(--leaf-3)}
+.pd-req h4{font-size:15.5px;font-weight:600;color:var(--deep);margin-bottom:4px}
+.pd-req p,.pd-req li{font-size:14.5px;line-height:1.7;color:var(--ink-2);margin:0}
+.pd-req p+p,.pd-req p+ul,.pd-req ul+p,.pd-req ol+p,.pd-req p+ol,.pd-req ul+ol{margin-top:10px}
+.pd-req ul,.pd-req ol{margin:6px 0 0;padding-left:20px}
+.pd-req li+li{margin-top:4px}
+.pd-req b{color:var(--deep);font-weight:600}
+.pd-req a{color:var(--blue);font-weight:500;text-underline-offset:3px}
+.pd-req h5{font-size:18px;font-weight:600;color:var(--deep);margin:22px 0 8px;letter-spacing:-.01em}
+.pd-req h5:first-child{margin-top:4px}
+.pd-bypass{margin-top:16px;border-radius:12px;background:var(--tint);overflow:hidden}
+.pd-bypass summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;font-size:15px;font-weight:600;color:var(--deep)}
+.pd-bypass summary::-webkit-details-marker{display:none}
+.pd-bypass summary::after{content:"+";font-size:20px;font-weight:400;color:var(--blue);transition:transform .4s var(--ease)}
+.pd-bypass[open] summary::after{transform:rotate(45deg)}
+.pd-bypass>div{padding:0 18px 18px}
+.pd-bypass .btn{margin:10px 0 4px}
+
+/* ---------- step timeline ---------- */
+.pd-tl{list-style:none;margin:0 auto;padding:0;max-width:1000px;position:relative;display:grid;gap:clamp(18px,3vh,28px)}
+.pd-tl::before{content:"";position:absolute;left:27px;top:20px;bottom:20px;width:2px;background:linear-gradient(var(--blue),var(--leaf-3))}
+.pd-tl>li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:clamp(16px,2.4vw,28px);align-items:start}
+.pd-tl .pd-num{background:var(--blue);color:var(--white);box-shadow:0 0 0 6px var(--white)}
+.pd-alt .pd-tl .pd-num{box-shadow:0 0 0 6px var(--tint-2)}
+.pd-card{background:var(--white);border:1px solid var(--card-line);border-radius:16px;padding:clamp(18px,2vw,26px);transition:box-shadow .5s var(--ease),transform .5s var(--ease)}
+.pd-card:hover{box-shadow:0 18px 40px -28px rgba(0,57,107,.45);transform:translateY(-2px)}
+.pd-sec:not(.pd-alt) .pd-card{background:var(--tint-2);border-color:transparent}
+.pd-card h3{font-size:clamp(18px,1.5vw,21px);font-weight:600;color:var(--blue);margin-bottom:4px}
+.pd-card h3+.pd-cap{margin-top:0}
+.pd-cap{font-size:14px;font-weight:500;color:var(--sky);margin:0 0 10px!important}
+.pd-card p{margin:10px 0 0;font-size:15px;line-height:1.7;color:var(--ink)}
+.pd-card h3+p{margin-top:10px}
+.pd-card a{color:var(--blue);font-weight:500;text-underline-offset:3px}
+.pd-card .note{font-style:italic;font-size:13.5px;line-height:1.65;color:var(--ink-2);background:var(--tint);border-left-color:var(--leaf-3);margin-top:14px;border-radius:0 8px 8px 0}
+.pd-sec:not(.pd-alt) .pd-card .note{background:var(--white)}
+.pd-exam{display:grid;gap:8px;margin-top:12px}
+.pd-exam div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.pd-exam span{font-size:12px;font-weight:600;color:var(--blue);background:var(--tint);border-radius:8px;padding:3px 0;text-align:center}
+.pd-sec:not(.pd-alt) .pd-exam span{background:var(--white)}
+
+/* ---------- robotics call to action ---------- */
+.pd-rob{max-width:1000px;margin-inline:auto;text-align:center;border-radius:24px;padding:clamp(36px,6vw,72px) clamp(22px,4vw,56px);background:linear-gradient(160deg,#F7EBF3,#FBF4F8)}
+.pd-rob h2{color:var(--rob-2);font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.pd-rob i{display:block;width:44px;height:3px;border-radius:2px;background:var(--rob-2);margin:18px auto 16px}
+.pd-rob .s{font-size:clamp(16px,1.3vw,19px);color:var(--ink);margin:0}
+.pd-rob p{margin:10px 0 0;font-size:15px;color:var(--ink-2)}
+.pd-rob .btn{margin-top:22px;background:var(--rob-2);border-color:var(--rob-2);color:var(--white)}
+.pd-rob .btn:hover{background:#8E4479;border-color:#8E4479}
+
+/* ---------- expert level ---------- */
+.pd-exp{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:1000px;margin:0 auto;padding:clamp(20px,3vw,32px);border-radius:18px;background:var(--tint-2)}
+.pd-exp a,.pd-exp span{font-size:15px;font-weight:500;padding:12px 22px;border-radius:var(--radius);background:var(--migs-3);color:var(--white);text-decoration:none;display:inline-flex;gap:10px;align-items:center;transition:background .35s var(--ease),transform .4s var(--ease)}
+.pd-exp a:hover{background:var(--deep);transform:translateY(-2px)}
+.pd-exp span{background:#9DBAD6;cursor:default}
+
+@media (max-width:640px){
+  .pd-steps::before,.pd-tl::before{left:21px}
+  .pd-num{width:44px;height:44px;border-radius:0 22px 0 22px;font-size:18px}
+  .pd-step>button{grid-template-columns:44px 1fr;gap:14px}
+  .pd-body{padding-left:58px}
+  .pd-tl>li{grid-template-columns:44px minmax(0,1fr)}
+}
+
+/* Robotics pathway: same layout as the MIGS page, in the Robotics colour. */
+.theme-rob .pw-title h2,.theme-rob .pd-card h3{color:var(--rob-2)}
+.theme-rob .pw-title i{background:var(--rob-2)}
+.theme-rob .pd-tl::before{background:linear-gradient(var(--rob-2),#E3BCD6)}
+.theme-rob .pd-tl .pd-num,.theme-rob .pd-step.on .pd-num{background:var(--rob-2);color:var(--white)}
+.theme-rob .pd-num{background:#F5E8F1;color:var(--rob-2)}
+.theme-rob .pd-cap{color:var(--rob-2)}
+.theme-rob .pd-req::before{background:#DDB3CF}
+.theme-rob .pd-exam span{color:var(--rob-2);background:#F7EBF3}
+.theme-rob .pd-alt{background:#FBF5F9}
+.theme-rob .pd-alt .pd-tl .pd-num{box-shadow:0 0 0 6px #FBF5F9}
+.theme-rob .pd-sec:not(.pd-alt) .pd-card{background:#FBF5F9}
+.theme-rob .pd-card .note{background:#F7EBF3;border-left-color:#DDB3CF}
+
+/* right column intro and the MIGS / ECRES switch */
+.pd-pnote{margin:0 0 18px;font-size:15px;line-height:1.65;color:var(--ink);font-weight:500}
+.pd-or{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.pd-or button{font:600 13px var(--font);letter-spacing:.04em;padding:8px 16px;border-radius:999px;border:1.5px solid var(--c);color:var(--c);background:var(--white);cursor:pointer;transition:background .3s,color .3s}
+.pd-or button[aria-pressed="true"]{background:var(--c);color:var(--white)}
+.pd-or button.m{--c:var(--migs-3)} .pd-or button.e{--c:var(--ecres-3)}
+.pd-or span{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--ink-3)}
+.pd-panel .pd-grp{display:none}
+.pd-panel .pd-grp.on{display:block;animation:pdIn .5s var(--ease) both}
+.pd-panel .pd-grp .pw-tbl{display:none}
+.pd-panel .pd-grp .pw-tbl.on{display:block}
+
+/* two bypass routes side by side */
+.pd-routes{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin-top:12px}
+.pd-route{border-radius:12px;background:#FBF5F9;padding:16px 18px}
+.pd-route p{margin:0!important}
+.pd-route ul{margin-top:8px!important}
+.pd-routes>span{align-self:center;font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--ink-3)}
+.pd-andor{display:inline-block;margin:6px 0 2px;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--rob-2);text-transform:uppercase}
+@media (max-width:820px){.pd-routes{grid-template-columns:1fr}.pd-routes>span{justify-self:center}}
+.pd-dev{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;font-weight:500;color:#8a5a00;background:#FFF6E0;padding:8px 14px;border-radius:999px}
+.theme-rob .pd-sec:not(.pd-alt) .pd-pre{background:#FBF5F9}
+.theme-rob .pd-sec:not(.pd-alt) .pd-card{background:#FBF5F9}
+
+/* ECRES pathway: same layout as the MIGS page, in the ECRES colour. */
+.theme-ecres .pd-num{background:#E3F1EE;color:var(--ecres-3)}
+.theme-ecres .pd-step.on .pd-num,.theme-ecres .pd-tl .pd-num{background:var(--ecres-3);color:var(--white)}
+.theme-ecres .pd-tl::before{background:linear-gradient(var(--ecres-3),#BFE0DA)}
+.theme-ecres .pd-card h3{color:#2F8B82}
+.theme-ecres .pd-cap{color:var(--ecres-3)}
+.theme-ecres .pd-exam span{color:#2F8B82;background:#E3F1EE}
+.theme-ecres .pd-alt{background:#F3FAF8}
+.theme-ecres .pd-alt .pd-tl .pd-num{box-shadow:0 0 0 6px #F3FAF8}
+.theme-ecres .pd-sec:not(.pd-alt) .pd-card,.theme-ecres .pd-sec:not(.pd-alt) .pd-pre{background:#F3FAF8}
+.theme-ecres .pd-card .note{background:#E3F1EE;border-left-color:#9FD2CA}
+.theme-ecres .pd-req::before{background:#9FD2CA}
+.theme-ecres .pw-title i{background:var(--ecres-3)}
+.theme-ecres .pd-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+
+/* Expert Level diploma pages (Oncology, later others). Uses the MIGS page building blocks. */
+.pd-logos{display:flex;justify-content:center;align-items:center;gap:clamp(28px,6vw,80px);flex-wrap:wrap;margin:-12px auto clamp(36px,6vh,56px)}
+.pd-logos img{height:clamp(64px,7vw,92px);width:auto;display:block}
+.pd-or-sep{display:flex;align-items:center;gap:12px;margin:2px 0 2px 34px;font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase}
+.pd-or-sep::after{content:"";flex:1;height:1px;background:var(--line)}
+.pd-or-sep+.pd-req{border-top:0}
+.pd-up{display:inline-flex;align-items:center;gap:6px;font-size:13px!important;font-weight:600!important;text-decoration:none!important;color:var(--blue)!important;background:var(--tint);padding:4px 12px;border-radius:999px;vertical-align:1px;transition:background .3s,color .3s}
+.pd-up:hover{background:var(--blue);color:var(--white)!important}
+.pd-up svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pd-card ul{margin:10px 0 0;padding-left:20px;font-size:15px;line-height:1.7;color:var(--ink)}
+.pd-card li+li{margin-top:6px}
+.pd-card li p{margin-top:6px}
+.pd-crit{margin-top:14px;border-radius:12px;background:var(--tint-2);padding:16px 18px}
+.pd-crit h4{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--deep);margin-bottom:2px}
+.pd-crit p{font-size:14.5px!important}
+.pd-vids{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pd-vids a{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;text-decoration:none!important;color:var(--deep)!important;background:var(--white);border:1px solid var(--card-line);padding:7px 12px;border-radius:999px;transition:border-color .3s,color .3s}
+.pd-vids a:hover{border-color:var(--blue);color:var(--blue)!important}
+.pd-vids svg{width:14px;height:14px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pd-lead2{font-weight:600;color:var(--deep)!important}
+.pd-card em{color:var(--ink-2)}
+.pd-onco .pw-levels{grid-template-columns:240px minmax(0,1fr)}
+.pd-onco .pw-idx a{grid-template-columns:38px 1fr;font-size:13px;line-height:1.35}
+.pd-onco .pd-tl{max-width:none}
+.pd-onco .pd-tl>li{scroll-margin-top:110px}
+
+/* fee table */
+.pd-fee{max-width:1000px;margin:clamp(48px,7vh,72px) auto 0;border-radius:18px;background:var(--white);border:1px solid var(--card-line);padding:clamp(22px,3vw,40px)}
+.pd-fee h3{font-size:clamp(18px,1.5vw,21px);font-weight:600;color:var(--ecres-2);margin-bottom:18px}
+.pd-fee table{width:100%;border-collapse:collapse;font-size:14.5px;color:var(--ink)}
+.pd-fee th,.pd-fee td{text-align:left;padding:11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.pd-fee th{font-weight:600;color:var(--deep)}
+.pd-fee td:nth-child(2),.pd-fee th:nth-child(2){width:160px;color:var(--ink-2)}
+.pd-fee td:last-child,.pd-fee th:last-child{width:120px;text-align:right;font-variant-numeric:tabular-nums}
+.pd-fee thead th{border-bottom:2px solid var(--deep)}
+.pd-fee thead th:last-child{font-size:18px;color:var(--blue)}
+.pd-fee tr.sub td{text-align:left!important;width:auto!important;color:var(--ink-2);font-size:13.5px;border-bottom:0;padding-top:14px}
+.pd-fee tr.foot td{border-bottom:0;padding-top:18px;color:var(--ink-2)}
+@media (max-width:640px){.pd-fee td:nth-child(2),.pd-fee th:nth-child(2){display:none}}
+
+/* upload links written in the text as [(upload here)](url){: .pd-up} */
+.pd-up::before{content:"";width:13px;height:13px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0-5 5m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4m0 0-5 5m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3'/%3E%3C/svg%3E") center/contain no-repeat}
+.pd-vids a::before{content:"";width:14px;height:14px;flex:none;background:var(--blue);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='m10 8.5 5 3.5-5 3.5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='m10 8.5 5 3.5-5 3.5z'/%3E%3C/svg%3E") center/contain no-repeat}
+/* text written in the data files as markdown */
+.pd-body p+p{margin-top:8px}
+.pd-card ol{margin:10px 0 0;padding-left:20px;font-size:15px;line-height:1.7}

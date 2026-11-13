@@ -1,0 +1,166 @@
+# ============================================================
+# MIGS PATHWAY PAGE  (website address: /pathways/migs/)
+# Text marked "markdown" can use **bold**, *italic*, [links](https://...) and lists.
+# Links that start with / or # stay on this website. Tables: _data/pathways/tables.yml
+#
+# journey  - the steps at the top. Clicking a step shows its table on the right.
+#   table      - key of the table to show   (or tables: [a, b] to show a switch between two)
+#   highlight  - rows of that table to highlight (el, ps, cert, exp, dip)
+#   more       - link of "More details"
+# sections - the blocks below, top to bottom.
+# ============================================================
+
+theme: migs
+
+intro:
+  title: "Acquire your GESEA MIGS Diploma"
+  subtitle: "Minimal Invasive Gynaecological Surgeon (MIGS)"
+  text: "The GESEA MIGS Pathway allows you to acquire your GESEA Diploma for ESGE Minimal Invasive Gynaecological Surgeon (MIGS):"
+
+journey:
+  - number: "1"
+    title: "Level 1 Certificate"
+    text: "The first step is to get your [GESEA Level 1 Certificate](#level-1) proving your general endoscopic knowledge and acquirement of basic endoscopic psychomotor skills to get ready to start training in the Operating Room"
+    more: "#level-1"
+    table: l1
+  - number: "2"
+    title: "Level 2 MIGS Certificate"
+    text: "The second step is to successfully complete the GESEA Level 2 MIGS exam and be awarded the [GESEA Level 2 MIGS Certificate.](#level-2) This certificate indicates that you have mastered the knowledge and more advanced psychomotor skills as needed to start performing basic endoscopic procedures in the Operating Room."
+    more: "#level-2"
+    table: l2_migs
+  - number: "3"
+    title: "MIGS Diploma"
+    text: "Finally, when you have the necessary surgical experience and related competence, you may apply for the [GESEA MIGS Diploma](#diploma) as issued by the [ESGE.](http://esge.org/) The GESEA MIGS Diploma is a video-based expert-reviewed diploma where surgical skills are evaluated by performing a select number of laparoscopic and hysteroscopic procedures."
+    more: "#diploma"
+    table: l2_migs
+    highlight: [exp, dip]
+  - robotics: true
+    tag: "OPTIONAL"
+    title: "Robotics"
+    text: "Additional step (not obligatory) is to obtain Robotics certification and diploma after finalising level 2 certification."
+    more: "/pathways/robotics/"
+    table: robotics
+
+sections:
+  - id: level-1
+    alt: true
+    title: "GESEA Level 1 Certificate"
+    subtitle: "Your entry point into the Operating Room"
+    prerequisites:
+      title: "Prerequisites for GESEA Level 1 Certification"
+      items:
+        - title: "GESEA Level 1 E-Learning Certificate of Completion"
+          text: "When applying for a level 1 certification, submit your Certificate of Completion together with your application or bring it with you at the certification session."
+    steps:
+      - title: "Knowledge Acquisition"
+        text: "Sign up for the [GESEA Level 1 e-learning](https://academy.esge.org/) on ESGE Academy and complete the theoretical tutorials and quizzes of level 1. You will be awarded with a certificate of completion."
+      - title: "Practical Skill Training"
+        text: "Develop your practical skills by exercising with the [GESEA Training Tools](https://gesea.eu/training-tools) at your centre, in one of the [Accredited GESEA Training or Diploma Centres,](/centres/) or during the [ESGE Annual Congress](https://esge.org/congress) and other national congresses where GESEA is present."
+      - title: "Certification"
+        text: "Take the GESEA Level 1 exam at an accredited GESEA Diploma Centre or during an official GESEA Event. The certification session consists of:"
+        exam:
+          - "a theoretical exam, TESTT1\\*, which contains 50 multiple choice questions on instrumentation, OR organisation, anatomy, different endoscopic techniques and complication management"
+          - "three practical exams, [LASTT1](https://gesea.eu/training-tools/lastt/), [SUTT1](https://gesea.eu/training-tools/sutt/) and [HYSTT1](https://gesea.eu/training-tools/hystt/)."
+        note: "**Please be aware that not all of the multiple choice questions in TESTT1 are included in the content of the preparatory tutorials on ESGE Academy. TESTT1 also contains additional questions in line with the expected knowledge level for surgeons participating in Level 1 of the GESEA Educational Programme."
+
+  - id: level-2
+    title: "GESEA Level 2 MIGS Certificate"
+    subtitle: "Start performing basic endoscopic procedures"
+    note: "To view GESEA Level 2 ECRES, [please click here](/pathways/ecres/#level-2)"
+    prerequisites:
+      title: "Prerequisites for Level 2 GESEA MIGS Certification"
+      items:
+        - title: "GESEA Level 1 Certificate"
+          text: |
+            ##### 1. GESEA Level 1 Certificate or Approved Bypass
+
+            Before applying for the GESEA Level 2 MIGS Certification, candidates must either:
+
+            - Hold a **GESEA Level 1 Certificate**, or
+            - Have an **approved GESEA Level 1 bypass**.
+
+            The candidate’s Level 1 certification or approved bypass status is verified directly through the **Online Scoring Platform (OSP)**. Candidates are therefore not required to submit a separate copy of their Level 1 certificate.
+          details:
+            summary: "Apply for a GESEA Level 1 Bypass"
+            text: |
+              Experienced surgeons who meet the eligibility criteria may apply for a Level 1 bypass through the OSP.
+
+              [APPLY FOR A BYPASS](https://osp.gesea.eu/){: .btn .solid .sm}
+
+              To submit an application:
+
+              1. Create an account on the new OSP or log in to your existing account.
+              2. Complete all required information under **My Account**.
+              3. Connect your OSP account to your **GESEA eLearning account**.
+              4. Select **Apply for a Bypass**.
+              5. Complete the application and upload the required supporting documents.
+
+              **Applicants must provide:**
+
+              - A letter signed by the Head of Department confirming experience in major surgical procedures in both laparoscopy and hysteroscopy.
+              - Proof of attendance at a recognised suturing workshop.
+
+              Each application is reviewed individually by the responsible committee. An approved bypass provides access to the **GESEA Level 2 MIGS Certification** but does not replace any Level 2 requirements.
+          after: |
+            ##### 2. GESEA Level 2 MIGS eLearning
+
+            Before participating in a GESEA Level 2 MIGS certification session, candidates must:
+
+            - Complete the required **GESEA Level 1 and Level 2 eLearning modules** on the [ESGE Academy](https://academy.esge.org/).
+            - Connect their GESEA eLearning account to their OSP account.
+            - Ensure that their eLearning completion status is correctly displayed in the OSP.
+        - title: "GESEA Level 2 MIGS E-Learning Certificate of Completion"
+          text: "The eLearning completion status is verified directly through the OSP. Candidates are not required to submit a separate eLearning completion certificate."
+    steps:
+      - title: "Knowledge Acquisition"
+        text: "Complete the theoretical tutorials and quizzes of [GESEA Level 2 MIGS e-learning](https://academy.esge.org/) on ESGE Academy."
+      - title: "Practical Skill Training"
+        text: "Develop your practical skills by exercising with the [GESEA Training Tools](https://gesea.eu/training-tools) at your centre, in one of the [GESEA Training or Diploma Centres,](/centres/) or during the [ESGE Annual Congress](https://esge.org/congress) and other national congresses where GESEA is present."
+      - title: "Certification"
+        text: "Take the GESEA Level 2 MIGS exam at an accredited [GESEA Diploma Centre](/centres/) or during an official GESEA Event or at the [ESGE Annual congress.](https://esge.org/congress) The certification session consists of:"
+        exam:
+          - "a theoretical exam, TESTT2\\*, which contains 50 multiple choice questions on instrumentation, OR organisation, anatomy, different endoscopic techniques and complication management"
+          - "three practical exams, [LASTT2](https://gesea.eu/training-tools/lastt/), [SUTT2](https://gesea.eu/training-tools/sutt/) and [HYSTT2](https://gesea.eu/training-tools/hystt/)."
+        note: "**Please be aware that not all of the multiple choice questions in TESTT2 are included in the content of the preparatory tutorials on ESGE Academy. TESTT2 also contains additional questions in line with the expected knowledge level for surgeons participating in Level 2 of the GESEA Educational Programme."
+
+  - id: diploma
+    alt: true
+    title: "GESEA MIGS Diploma"
+    subtitle: "Validate your surgical competence"
+    prerequisites:
+      title: "Prerequisites for GESEA MIGS Diploma"
+      items:
+        - title: "MIGS Certificate"
+          text: "You have acquired the MIGS Certificate."
+        - title: "ESGE Membership"
+          text: "You are a member of the ESGE, either individually or through one of its corporate member societies. If you are not yet, [become a member](https://esge.org/membership/) now."
+    steps:
+      - title: "Surgical Competence"
+        caption: "To apply for your GESEA MIGS Diploma:"
+        text: |
+          You have to acquire the necessary surgical competence both in laparoscopy and in hysteroscopy.
+
+          You must provide your [documented testimony of surgical clinical practice curriculum](https://gesea.eu/wp-content/uploads/2025/06/CRITERIA-LEVEL-2-DIPLOMA-ESGE-MIGS_2020-1.pdf) a maximum period of 5 years together with supporting documentation to [info@esge.org.](mailto:info@esge.org)
+      - text: "The next step is to [submit the schedule](https://www.esge.org/schedule-a-procedure/) of your first procedure stating the date when you will perform the actual procedure, you cannot use existing recorded video material. There are five different procedures to schedule with a total cost of 500 euro. As soon as you have scheduled your first procedure, you have entered the MIGS Diploma programme."
+      - text: |
+          After you have performed a procedure, you have 48 hours to [submit the video](https://www.esge.org/submit-a-video/) of the procedure through the GESEA Diploma Video submission system and the report of the anaesthesiologist to diploma@esge.org. For each procedure, you have to make a separate submission.
+
+          When the ESGE has received all your recorded procedures, they will be expert-reviewed and rated. [Apply now for your GESEA MIGS Diploma through the ESGE website.](https://esge.org/education/migs-diploma)
+
+robotics_cta:
+  title: "Acquire your GESEA Robotics Diploma (Optional)"
+  subtitle: "Validate your surgical competence"
+  text:
+    - "The GESEA Robotics Pathway allows you to acquire your Diploma of Gynaecological Robotics Surgeon."
+    - "For more details, click the button below"
+  button: "Click Here"
+  url: "/pathways/robotics/"
+
+# Buttons without url are shown as greyed out (their page does not exist yet).
+expert:
+  title: "GESEA Expert Level"
+  buttons:
+    - { label: "Oncology", url: "/pathways/gesea-migs-oncology/" }
+    - { label: "Urogynaecology", url: "/pathways/gesea-migs-urogynaecology/" }
+    - { label: "Neuropelveology" }
+    - { label: "Endometriosis" }
