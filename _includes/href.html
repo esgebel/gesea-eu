@@ -1,0 +1,3 @@
+{%- comment -%} Prints href="..." for a link from a _data file. Links starting with / or # stay on this website, other links open in a new tab. {%- endcomment -%}
+{%- assign _c = include.url | slice: 0 -%}
+{%- if include.url contains '://' -%}href="{{ include.url }}" target="_blank" rel="noopener"{%- elsif include.url contains 'mailto:' or _c == '#' -%}href="{{ include.url }}"{%- else -%}href="{{ include.url | relative_url }}"{%- endif -%}

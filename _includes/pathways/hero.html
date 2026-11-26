@@ -1,0 +1,10 @@
+{%- comment -%} Blue band at the top of the Pathways pages: breadcrumb, title and tabs. include.tab = label of the active tab. {%- endcomment -%}
+<section class="band"><div class="in wrap pw-hero pd-hero">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a>{% for c in page.crumbs %}<span aria-hidden="true">›</span><a href="{{ c[1] | relative_url }}">{{ c[0] }}</a>{% endfor %}<span aria-hidden="true">›</span><span>{{ page.title }}</span></nav>
+  <h1>{{ page.title }}</h1>
+  <nav class="pw-tabs" aria-label="Pathways">
+    {%- for t in site.data.pathways.tabs %}
+    <a href="{{ t.url | relative_url }}"{% if t.label == include.tab %} aria-current="page"{% endif %}>{{ t.label }}</a>
+    {%- endfor %}
+  </nav>
+</div></section>

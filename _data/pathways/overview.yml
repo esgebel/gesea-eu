@@ -1,0 +1,105 @@
+# ============================================================
+# PATHWAYS OVERVIEW PAGE  (website address: /pathways/)
+# Text marked "markdown" can use **bold**, *italic* and [links](https://...).
+# Links that start with / stay on this website.
+# The requirement tables are in _data/pathways/tables.yml
+# ============================================================
+
+title: "Pathways"
+
+what_is:
+  title: "What is GESEA?"
+  subtitle: "Structured educational programme for Gynaecological Endoscopy"
+  heading: "The Gynaecological Endoscopic Surgical Education and Assessment (GESEA) programme:"
+  # markdown, one line per bullet
+  bullets:
+    - "is a structured educational programme for Gynaecological (MIGS) and reproductive (ECRES) Endoscopy"
+    - "trains and certifies knowledge and practical skills prior to surgical competence"
+    - "follows the [European–American Joint Recommendation](https://old.esge.org/wp-content/uploads/2019/09/Joint-Recommendation-Endoscopic-Training.pdf) stating that *each hospital teaching endoscopic surgery should make available an endoscopic dry lab for training and improving the proficiency of the endoscopic surgery skills of the physician.*"
+    - "spans over **three distinct levels** offering learning modules for all levels of proficiency"
+  # markdown
+  lead: "Through its **2 main pathways in level 2**, it teaches and assesses the knowledge, skills and surgical skills needed for minimal invasive gynaecological surgeon (MIGS), reproductive endoscopic surgeons (ECRES) and for both pathways a Robotics dimension in psychomotor skills is provided (Robotics)."
+
+# The level table. Each row has 5 cells, in the order of the columns:
+#   "check" = tick, "" = empty, any other text = shown in the cell (<br> starts a new line).
+# theme: l1 | migs | ecres | rob | m3 (MIGS level 3) | b3 (MIGS & ECRES) | e3 (ECRES level 3)
+# Rows in the same group light up together when the mouse is over them.
+matrix:
+  columns: ["E-learning", "Psychomotor skills", "Certification", "Experience", "Diploma"]
+  groups:
+    - level: "LEVEL 1"
+      rows:
+        - { name: "GESEA Universal Entry Gate Basic Endoscopy Training", theme: l1, cells: ["check", "check", "Level 1<br>Certification", "", ""] }
+    - level: "LEVEL 2"
+      rows:
+        - { name: "GESEA MIGS", theme: migs, cells: ["check", "check", "Level 2 MIG<br>Certification", "check", "Level 2 MIG<br>Diploma"] }
+    - rows:
+        - { name: "GESEA ECRES", theme: ecres, cells: ["check", "check", "Level 2 ECRES<br>Certification", "check", "Level 2 ECRES<br>Diploma"] }
+    - separator: true
+      rows:
+        - { name: "GESEA ROBOTICS", theme: rob, cells: ["check", "check", "Robotics<br>Certification", "check", "Robotics<br>Diploma"] }
+    - level: "LEVEL 3"
+      rows:
+        - { name: "MIGS –<br>Oncology", theme: m3, cells: ["check", "", "", "check", "Level 3 Oncology<br><b>Diploma</b>"] }
+        - { name: "MIGS –<br>Urogynaecology", theme: m3, cells: ["check", "", "", "check", "Level 3 Urogynaecology<br><b>Diploma</b>"] }
+        - { name: "MIGS –<br>Neuropelveology", theme: m3, cells: ["check", "", "", "check", "Level 3 Neuropelveology<br><b>Diploma</b>"] }
+    - rows:
+        - { name: "<b>MIGS &amp; <i>ECRES</i> –</b><br>Endometriosis", theme: b3, cells: ["check", "", "", "check", "Level 3 Endometriosis<br><b>Diploma</b>"] }
+        - { name: "<b>MIGS &amp; <i>ECRES</i> –</b><br>Hysteroscopy", theme: b3, cells: ["check", "", "", "check", "Level 3 Hysteroscopy<br><b>Diploma</b>"] }
+    - rows:
+        - { name: "ECRES –<br>Reproductive surgeon", theme: e3, cells: ["check", "", "", "check", "Level 3 Reproductive Surgeon<br><b>Diploma</b>"] }
+
+components:
+  - label: "KNOWLEDGE"
+    text: "Knowledge is trained through e-learning materials available on [ESGE Academy](https://academy.esge.org/). The acquisition of knowledge is assessed through online quizzes."
+  - label: "PSYCHOMOTOR<br>SKILLS"
+    text: "A series of well defined exercises on laparoscopy, laparoscopic suturing, hysteroscopy and robotics train the psychomotor skills of GESEA participants."
+  - label: "SURGICAL<br>COMPETENCE"
+    text: "Surgical competence is measured through assessment of standardised procedures by expert review via responsible organization (for example: ESGE for MIGS, ESHRE for ECRES)."
+
+pathways:
+  title: "GESEA Pathways"
+  subtitle: "MIGS, ECRES and Robotics"
+  intro: "The GESEA Educational Programme currently provides two distinct pathways, offering educational content in various skills and specialities."
+  cards:
+    - { name: "GESEA MIGS", text: "Become a Minimal Invasive Gynaecological Surgeon", url: "/pathways/migs/", theme: migs }
+    - { name: "GESEA ECRES", text: "Become a Reproductive Endoscopic Surgeon", url: "/pathways/ecres/", theme: ecres }
+    - { name: "GESEA Robotics", text: "Become a Gynaecological Robotics Surgeon", url: "/pathways/robotics/", theme: rob }
+
+levels:
+  title: "GESEA Levels"
+  subtitle: "From Level 1 to 3"
+  rule: "The GESEA Educational Programme is structured in three proficiency levels which progressively build on each other. One must fulfill the criteria for each level before gaining access and progressing to the next level."
+  level_1:
+    # markdown. The words in "highlight" are shown in colour (they must also appear in "text").
+    highlight: "is the GESEA universal entry gate for the basic training of endoscopy psychomotor skills."
+    text: "The **first level** is the GESEA universal entry gate for the basic training of endoscopy psychomotor skills. The GESEA Educational Programme is fully focused on providing doctors the necessary knowledge and skills to start their training in the operating room."
+    tables: [l1]
+    after: "The Level 1 Certificate is the same for each of the two pathways in level 2."
+  level_2:
+    text: |
+      The **second level** of the GESEA Educational Programme prepares doctors, for either [MIGS](/pathways/migs/) or [Reproductive surgery (ECRES)](/pathways/ecres/) level 2 endoscopic procedures in the operating room.
+
+      The two pathways have both shared and pathway-specific learning modules, with separate certifications and diplomas.
+
+      [For both pathways the Robotic certificate/diploma is optional.](/pathways/robotics/)
+    tables: [l2_migs, l2_ecres, robotics_l2]
+  level_3:
+    text: "The **third level** of the GESEA Educational Programme is the expert level and is currently under development. It will focus on sub-specialities such as oncology, difficult endometriosis surgery, advanced reproductive surgery as well as expert-level hysteroscopy."
+    columns:
+      - title: "Level 3 · MIGS"
+        theme: m
+        items:
+          - { name: "Oncology", elearning: "Oncology E-learning", experience: "Clinical Attachment", diploma: "Level 3 Oncology Diploma" }
+          - { name: "Urogynaecology", elearning: "Urogynaecology E-learning", experience: "Clinical Attachment", diploma: "Level 3 Urogynaecology Diploma" }
+          - { name: "Neuropelveology", elearning: "Neuropelveology E-learning", experience: "Clinical Attachment", diploma: "Level 3 Neuropelveology Diploma" }
+          - { name: "Endometriosis", elearning: "Endometriosis E-learning", experience: "Masterclasses / Clinical attachment", diploma: "Level 3 Endometriosis Diploma" }
+          - { name: "Hysteroscopy", elearning: "Hysteroscopy E-learning", experience: "Masterclasses / Clinical attachment", diploma: "Level 3 Hysteroscopy Diploma" }
+      - title: "Level 3 · ECRES"
+        theme: e
+        items:
+          - { name: "Reproductive surgeon", elearning: "Reproductive surgeon E-learning", experience: "Masterclasses / Clinical attachment", diploma: "Level 3 Reproductive surgeon Diploma" }
+          - { name: "Endometriosis", elearning: "Endometriosis E-learning", experience: "Masterclasses / Clinical attachment", diploma: "Level 3 Endometriosis Diploma" }
+          - { name: "Hysteroscopy", elearning: "Hysteroscopy E-learning", experience: "Masterclasses / Clinical attachment", diploma: "Level 3 Hysteroscopy Diploma" }
+    # shown in every Level 3 card above the specific e-learning
+    common_elearning: "Advanced Level 3 E-learning"

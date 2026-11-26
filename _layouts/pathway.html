@@ -1,0 +1,101 @@
+---
+layout: default
+---
+{%- comment -%} MIGS, ECRES and Robotics pathway pages. The words are in _data/pathways/<page.pathway>.yml {%- endcomment -%}
+{%- assign d = site.data.pathways[page.pathway] -%}
+<main id="app" class="{% if d.theme == 'ecres' %}theme-ecres{% elsif d.theme == 'rob' %}theme-rob{% endif %}">
+  {% include pathways/hero.html tab=page.tab %}
+
+  <!-- JOURNEY -->
+  <section class="pw-sec" aria-labelledby="p0">
+    <div class="wrap">
+      {% include pathways/title.html id="p0" title=d.intro.title subtitle=d.intro.subtitle %}
+      <p class="pd-lead rv">{{ d.intro.text }}</p>
+      {%- assign keys = "" | split: "" -%}
+      {%- for s in d.journey -%}{%- if s.tables -%}{%- assign k = s.tables | join: "+" -%}{%- else -%}{%- assign k = s.table -%}{%- endif -%}{%- assign keys = keys | push: k -%}{%- endfor -%}
+      {%- assign ukeys = keys | uniq -%}
+      <div class="pd-journey">
+        <ol class="pd-steps">
+          {%- for s in d.journey %}
+          <li class="pd-step{% if s.robotics %} rob{% endif %}{% if forloop.first %} on{% endif %}" data-tbl="t-{{ keys[forloop.index0] | replace: '+', '-' }}"{% if s.highlight %} data-hl="{{ s.highlight | join: ' ' }}"{% endif %}>
+            <button type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"><span class="pd-num"{% unless s.number %} aria-hidden="true"{% endunless %}>{{ s.number }}</span><span class="pd-st">{% if s.tag %}<small>{{ s.tag }}</small>{% endif %}<b>{{ s.title }}</b></span></button>
+            <div class="pd-body">{% include md.html text=s.text %}{% if s.more %}<a class="pd-more" {% include href.html url=s.more %}>{{ s.more_label | default: "More details" }} <span class="ar">→</span></a>{% endif %}</div>
+          </li>
+          {%- endfor %}
+        </ol>
+        <div class="pd-panel" aria-live="polite">
+          {% if d.panel_note %}<p class="pd-pnote">{{ d.panel_note }}</p>{% endif %}
+          {%- for k in ukeys %}
+          {%- assign parts = k | split: "+" -%}
+          <div class="pd-grp{% if forloop.first %} on{% endif %}" id="t-{{ k | replace: '+', '-' }}">
+            {%- if parts.size > 1 %}
+            <div class="pd-or" role="group" aria-label="Level 2 pathway">{% for p in parts %}{% assign t = site.data.pathways.tables[p] %}{% unless forloop.first %}<span>{{ d.or_label | default: "OR" }}</span>{% endunless %}<button type="button" class="{% if t.theme == 'migs' %}m{% else %}e{% endif %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-t="{{ k | replace: '+', '-' }}-{{ p }}">GESEA {{ t.tag }}</button>{% endfor %}</div>
+            {%- endif %}
+            {%- for p in parts %}{% capture tid %}{{ k | replace: '+', '-' }}-{{ p }}{% endcapture %}{% include pathways/table.html key=p id=tid on=forloop.first %}{% endfor %}
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- for sec in d.sections %}
+  <section class="pw-sec pd-sec{% if sec.alt %} pd-alt{% endif %}" id="{{ sec.id }}" aria-labelledby="s-{{ sec.id }}">
+    <div class="wrap">
+      <div class="pw-title rv"><h2 id="s-{{ sec.id }}">{{ sec.title }}</h2><i></i>{% if sec.subtitle %}<p>{{ sec.subtitle }}</p>{% endif %}{% if sec.note %}<p class="pd-sub2">{% include md.html text=sec.note inline=true %}</p>{% endif %}</div>
+      {%- if sec.prerequisites %}
+      <div class="pd-pre rv">
+        <h3>{{ sec.prerequisites.title }}</h3>
+        {%- for it in sec.prerequisites.items %}
+        <div class="pd-req"><div><h4>{{ it.title }}</h4>
+          {%- if it.andor %}<span class="pd-andor">{{ it.andor }}</span>{% endif %}
+          {%- if it.text %}{% include md.html text=it.text %}{% endif %}
+          {%- if it.routes %}<div class="pd-routes">{% for r in it.routes %}<div class="pd-route">{% include md.html text=r %}</div>{% endfor %}</div>{% endif %}
+          {%- if it.details %}<details class="pd-bypass"><summary>{{ it.details.summary }}</summary><div>{% include md.html text=it.details.text %}</div></details>{% endif %}
+          {%- if it.after %}{% include md.html text=it.after %}{% endif %}
+        </div></div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if sec.steps %}
+      <ol class="pd-tl">
+        {%- for st in sec.steps %}
+        <li class="rv"><span class="pd-num">{{ forloop.index }}</span><div class="pd-card">
+          {%- if st.title %}<h3>{{ st.title }}</h3>{% endif %}
+          {%- if st.caption %}<p class="pd-cap">{{ st.caption }}</p>{% endif %}
+          {%- if st.text %}{% include md.html text=st.text %}{% endif %}
+          {%- if st.exam %}<div class="pd-exam">{% for e in st.exam %}<div><span>({{ forloop.index }})</span><p style="margin:0">{% include md.html text=e inline=true %}</p></div>{% endfor %}</div>{% endif %}
+          {%- if st.note %}<p class="note">{{ st.note }}</p>{% endif %}
+          {%- if st.badge %}<span class="pd-dev">{{ st.badge }}</span>{% endif %}
+        </div></li>
+        {%- endfor %}
+      </ol>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endfor %}
+
+  {%- if d.robotics_cta %}{% assign r = d.robotics_cta %}
+  <section class="pw-sec pd-sec" id="robotics" aria-labelledby="s-rob">
+    <div class="wrap"><div class="pd-rob rv">
+      <h2 id="s-rob">{{ r.title }}</h2><i></i>
+      <p class="s">{{ r.subtitle }}</p>
+      {%- for t in r.text %}<p>{{ t }}</p>{% endfor %}
+      <a class="btn" {% include href.html url=r.url %}>{{ r.button }} <span class="ar">→</span></a>
+    </div></div>
+  </section>
+  {%- endif %}
+
+  {%- if d.expert %}
+  <section class="pw-sec pd-sec" id="expert" aria-labelledby="s-exp" style="padding-top:0">
+    <div class="wrap">
+      {% include pathways/title.html id="s-exp" title=d.expert.title %}
+      <div class="pd-exp rv">
+        {%- for b in d.expert.buttons %}
+        {% if b.url %}<a {% include href.html url=b.url %}>{{ b.label }} <span class="ar">→</span></a>{% else %}<span>{{ b.label }}</span>{% endif %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+</main>

@@ -1,0 +1,284 @@
+# ============================================================
+# GESEA4EU PAGES - menus, lists and shared parts.
+# The longer texts of each page are in the gesea4eu/ folder (one .md file per page).
+# Images are in assets/img/gesea4eu/
+# ============================================================
+
+title: "GESEA4EU"
+tagline: "Standardising and expanding Gynaecological Endoscopy training in Europe"
+logo: "/assets/img/gesea4eu/gesea4eu-logo.webp"
+logo_alt: "GESEA4EU, Standardising Gynaecological Endoscopy Training"
+
+# Tabs under the title. Order here = order on the website.
+menu:
+  - { label: "About", url: "/gesea4eu/" }
+  - { label: "Project Objectives", url: "/gesea4eu/project-objectives/" }
+  - { label: "Concept and Methodology", url: "/gesea4eu/concept-and-methodology/" }
+  - { label: "Project Update", url: "/gesea4eu/project-update/" }
+  - { label: "Project Output", url: "/gesea4eu/project-outputs/" }
+  - { label: "Partners", url: "/gesea4eu/partners/" }
+  - { label: "Events", url: "/gesea4eu/events/" }
+  - { label: "News", url: "/gesea4eu/news/" }
+  - { label: "Gallery", url: "/gesea4eu/gallery/" }
+  - { label: "Contact Us", url: "/gesea4eu/contact-us/" }
+
+# Second row of buttons on the Concept and Methodology pages. A "group" line is a small label.
+submenu:
+  - { label: "Concept and Methodology", url: "/gesea4eu/concept-and-methodology/" }
+  - { label: "Training Methodology", url: "/gesea4eu/training-methodology/" }
+  - { group: "GESEA LEARNING MODULES" }
+  - { label: "General Modules", url: "/gesea4eu/learning-modules/general/" }
+  - { label: "Laparoscopy Modules", url: "/gesea4eu/learning-modules/laparoscopy/" }
+  - { label: "Hysteroscopy Modules", url: "/gesea4eu/learning-modules/hysteroscopy/" }
+  - { label: "Robotics Modules", url: "/gesea4eu/learning-modules/robotics/" }
+
+# Bottom of every GESEA4EU page
+connect:
+  title: "Connect with us across"
+  links:
+    - { label: "Facebook", url: "https://www.facebook.com/GESEA4EU", icon: facebook }
+    - { label: "Instagram", url: "https://www.instagram.com/gesea_programme/", icon: instagram }
+    - { label: "LinkedIn", url: "https://www.linkedin.com/company/gesea4eu/", icon: linkedin }
+    - { label: "GESEA4EU@esge.org", url: "mailto:GESEA4EU@esge.org", icon: mail }
+  funding_image: "/assets/img/gesea4eu/funding-strip.webp"
+  funding_alt: "Co-funded by the European Union"
+
+objectives:
+  - "To make an inventory and classification of the simulation training tools and training programmes as used in the scope of the GESEA Educational Programme"
+  - "To standardise European training modules as part of the GESEA Educational Programme for gynaecological surgeons."
+  - "To extend the GESEA Educational Programme by developing standardised training modules for nurses and non-medical staff and to develop a Train-the-Trainer programme"
+  - "To implement and validate the developed learning modules and to provide credentialing recognised on a European level."
+  - "To receive broad European recognition of the GESEA Training Methodology through the European Board & College of Obstetrics and Gynaecology (EBCOG) and to solidify GESEA as the standard for training and certification in its field."
+  - "To disseminate and exploit GESEA, extending the current network of Training Centres across Europe by providing a training curriculum in native languages."
+
+# Learning modules. Each module: code, name, text, type, applicable (a list).
+modules:
+  general:
+    title: "General Modules"
+    intro: "The general learning modules offer general knowledge and skills important within the scope of the educational programme for each of the different target groups."
+    figure: "/assets/img/gesea4eu/figures/general-modules.webp"
+    caption: "Schematic Representation of the General Learning Modules"
+    items:
+      - code: "G1"
+        name: "Remote Consultations"
+        text: "E-learning module that will teach how to organise remote consultations or hybrid consultations (both online and on-site). It will teach how to set up a digital patient workflow and correctly involving physicians, nurses and administrative staff in the patient journey. It will provide a solution to continued medical health care in scenarios where on-site visits are restricted or when consultations need to be upscaled. It will combine the experiences as gathered through the concept of the Digital Hysteroscopic Centre."
+        type: "Online"
+        applicable: ["General Medicine", "Specialist Professionals", "Nurses", "Non-Clinical Staff"]
+      - code: "G2"
+        name: "Endoscopic Surgery and Patient Wellbeing"
+        text: "E-learning module that informs and raises awareness of endoscopic surgery and its positive impact on general patient wellbeing targeted at general practitioners. It will highlight the current technical evolutions and showcase what type of treatments can be performed through endoscopic surgery."
+        type: "Online"
+        applicable: ["General Medicine"]
+      - code: "G3"
+        name: "GESEA Educational Programme"
+        text: "E-learning introduction module that explains the principles of the educational programme, its relevance, value and its scope. This module will not just address healthcare professionals, but also non-clinical staff that will either support the programme from an administrative point of view or the management that will need to assess the validity of the programme in their centre."
+        type: "Online"
+        applicable: ["Specialist Professionals", "Nurses", "Non-Clinical Staff", "Trainers"]
+      - code: "G4"
+        name: "GESEA Administration"
+        text: "E-learning module that will instruct the non-clinical staff on how to successfully run the GESEA Educational Programme from an administrative point of view by managing test and/or certification sessions as part of their educational offerings."
+        type: "Online"
+        applicable: ["Non-Clinical Staff"]
+      - code: "G5"
+        name: "Motivation and Communication"
+        text: "Hybrid module that will teach GESEA Trainers how to give courses that truly engage the participants and keeps them motivated. It will also address how to best communicate with course participants and deal with unforeseen circumstances or difficult participants."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Trainers"]
+      - code: "G6"
+        name: "Managing Online Training Sessions"
+        text: "The recent COVID19 restrictions have forced new ways to approach training. This online training module will illustrate how an online course can successfully be set up achieving similar learning outcomes as an on-site course."
+        type: "Online"
+        applicable: ["Non-Clinical Staff", "Trainers"]
+  laparoscopy:
+    title: "Laparoscopy Modules"
+    intro: "The laparoscopy modules teach the knowledge and skills needed to participate in laparoscopic surgery or in providing training in laparoscopy."
+    figure: "/assets/img/gesea4eu/figures/laparoscopy-modules.webp"
+    caption: "Schematic Representation of the Laparoscopy Learning Modules"
+    items:
+      - code: "L1"
+        name: "Basic Laparoscopy"
+        text: "The basic laparoscopy module is primarily aimed at residents to provide them with the necessary laparoscopy knowledge and psychomotor skills to enter the operating room. It will prepare doctors for the laparoscopy part of the official level 1 certification of GESEA."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "L2"
+        name: "Intermediate Laparoscopy"
+        text: "The intermediate laparoscopy module is aimed at residents to provide them with the necessary laparoscopy knowledge and psychomotor skills to start basic procedures in the operating room. Furthermore, it serves as a skill test for established surgeons to gain access to the GESEA Educational Programme. It will prepare doctors for the laparoscopy part of the official level 2 certification of GESEA."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "L3"
+        name: "MIGS Clinical Attachment"
+        text: "The Minimal Invasive Gynaecological Surgeon (MIGS) Clinical Attachment is a learning module where a surgeon will be stationed in one of our four pilot Fellowship centres to be trained in the surgical procedures of laparoscopy and hysteroscopy in preparation to applying for the MIGS Diploma."
+        type: "On-site"
+        applicable: ["Specialist Professionals"]
+      - code: "L4"
+        name: "Advanced Laparoscopy"
+        text: "E-learning module that provides the introduction course to GESEA Level 3. Advanced cases require supplementary knowledge to optimise surgical time and reduce risk of complications. Topics will include advanced suturing competences, ergonomics, dissection rules, retroperitoneal anatomy, bowel anatomy and repair, ureter and bladder repair, difficult scenarios in laparoscopic surgery and complication management."
+        type: "Online"
+        applicable: ["Specialist Professionals"]
+      - code: "L5"
+        name: "Laparoscopy for Nurses"
+        text: "This learning module focusses on providing education for nurses that prepare and support the surgeon in the operating room during laparoscopic procedures. Topics will include: anatomy; acceptance, preparation and positioning of patients in the OR; nursing and instrument handling during laparoscopy; laparoscopic procedures; challenges in laparoscopy."
+        type: "On-site"
+        applicable: ["Nurses"]
+      - code: "L6"
+        name: "Laparoscopy for equipment operators"
+        text: "Industry plays an important role in supporting the training activities of health-care professionals. This course will teach non-clinical staff how the GESEA Training Tools are to be used with the laparoscopy surgical equipment as made available by industry and how the educational curriculum as offered through GESEA can be correctly leveraged to increase patient wellbeing."
+        type: "On-site"
+        applicable: ["Non-clinical staff"]
+      - code: "L7"
+        name: "Laparoscopy for Training Specialists"
+        text: "The Laparoscopy Train-the-Trainer module for Specialists focusses on how to teach the laparoscopy learning modules and GESEA exercises to gynaecological surgeons. It provides instruction on the essential skills needed to get results in the classroom and will teach candidate trainers how to best make the connection between the laparoscopy skill training and the surgical procedures."
+        type: "On-site"
+        applicable: ["Trainers"]
+      - code: "L8"
+        name: "Laparoscopy for Training Nurses"
+        text: "The Laparoscopy Train-the-Trainer module for Nurses focusses on how to properly instruct the learning modules to nurses. It will identify the essential components of an effective training session and highlight the role of the nurse during laparoscopic surgery in relation to the offered training methodology."
+        type: "On-site"
+        applicable: ["Trainers"]
+  hysteroscopy:
+    title: "Hysteroscopy Modules"
+    intro: "The hysteroscopy modules teach the knowledge and skills needed to participate in hysteroscopic surgery or in providing training in hysteroscopy."
+    figure: "/assets/img/gesea4eu/figures/hysteroscopy-modules.webp"
+    caption: "Schematic Representation of the Hysteroscopy Learning Modules"
+    items:
+      - code: "H1"
+        name: "Basic Hysteroscopy"
+        text: "The basic hysteroscopy module is primarily aimed at residents to provide them with the necessary hysteroscopy knowledge and psychomotor skills to enter the operating room. It will prepare doctors for the hysteroscopy part of the official level 1 certification of GESEA."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "H2"
+        name: "Intermediate Hysteroscopy"
+        text: "The intermediate hysteroscopy module is aimed at residents to provide them with the necessary hysteroscopy knowledge and psychomotor skills to start basic procedures in the operating room. Furthermore, it serves as a skill test for established surgeons to gain access to the GESEA Educational Programme. It will prepare doctors for the hysteroscopy part of the official level 2 certification of GESEA."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "H3"
+        name: "MIGS Clinical Attachment"
+        text: "The Minimal Invasive Gynaecological Surgeon (MIGS) Clinical Attachment is a learning module where a surgeon will be stationed in one of our four pilot Fellowship centres to be trained in the surgical procedures of both laparoscopy and hysteroscopy in preparation to applying for the MIGS Diploma."
+        type: "On-site"
+        applicable: ["Specialist Professionals"]
+      - code: "H4"
+        name: "Digital Hysteroscopy Centre"
+        text: "The combination of digital imaging and hysteroscopy provides a novel approach for precision medicine for efficient, accurate and patient-friendly uterine diagnosis and treatment as promoted through the Digital Hysteroscopy Centre (DHC). This module will train surgeons on the correct use of transvaginal simulators and ultrasound machines aiming to improve ultrasound skills and machine controls skills to ensure patients’ safety."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "H5"
+        name: "Hysteroscopy for Nurses"
+        text: "This learning module focuses on providing education for nurses that prepare and support the surgeon in the operating room during hysteroscopic procedures. Topics will include: anatomy; acceptance, preparation and positioning of patients in the OR; use of energy, instruments, fluid balance; hysteroscopes and resectoscopes: assembly and use; challenges in hysteroscopy."
+        type: "On-site"
+        applicable: ["Nurses"]
+      - code: "H6"
+        name: "Digital Hysteroscopy Centre for Nurses"
+        text: "Nurses play a primordial role in the Digital Hysteroscopy Centre (DHC). This course teaches how nurses are involved in the organisation, instrument management and patient pathway of outpatient hysteroscopy."
+        type: "On-site"
+        applicable: ["Nurses"]
+      - code: "H7"
+        name: "Hysteroscopy for equipment operators"
+        text: "Industry plays an important role in supporting the training activities of health-care professionals. This course will teach non-clinical staff how the GESEA Training Tools are to be used with the hysteroscopy surgical equipment as made available by industry and how the educational curriculum as offered through GESEA can be correctly leveraged to increase patient wellbeing."
+        type: "On-site"
+        applicable: ["Non-clinical staff"]
+      - code: "H8"
+        name: "Hysteroscopy for Training Specialists"
+        text: "The Hysteroscopy Train-the-Trainer module for Specialists focuses on how to teach the hysteroscopy learning modules and GESEA exercises to gynaecological surgeons. It provides instruction on the essential skills needed to get results in the classroom and will teach candidate trainers how to best make the connection between the hysteroscopy skill training and the surgical procedures."
+        type: "On-site"
+        applicable: ["Trainers"]
+      - code: "H9"
+        name: "Laparoscopy for Training Nurses"
+        text: "The Hysteroscopy Train-the-Trainer module for Nurses focuses on how to properly instruct the learning modules to nurses. It will identify the essential components of an effective training session and highlight the role of the nurse during hysteroscopic surgery in relation to the offered training methodology."
+        type: "On-site"
+        applicable: ["Trainers"]
+  robotics:
+    title: "Robotics Modules"
+    figure: "/assets/img/gesea4eu/figures/robotics-modules.webp"
+    caption: "Schematic Representation of the Robotics Learning Modules"
+    items:
+      - code: "R1"
+        name: "Robotics"
+        text: "This course aims to introduce participants to the modern landscape of robotic-assisted surgery, to explain the main features available and to incorporate a training and simulation exercises that will prepare surgeons for GESEA Robotics certification."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Specialist Professionals"]
+      - code: "R2"
+        name: "Robotics for Nurses"
+        text: "Nurses, as members of the robotic surgical team, must demonstrate a very good level of professional knowledge, and be an expert in robotic technology. This course will teach nurses about e-nursing skills, creation and revision of guidelines and specific protocols following best practice rules."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Nurses"]
+      - code: "R3"
+        name: "Robotics for Training Specialists"
+        text: "The Robotics Train-the-Trainer module for Specialists focusses on how to teach the robotics learning modules and GESEA exercises to gynaecological surgeons. It provides instruction on the essential skills needed to get results in the classroom and will teach candidate trainers how to best make the connection between the robotic skill training and the surgical procedures."
+        type: "Hybrid (online and on-site)"
+        applicable: ["Trainers"]
+      - code: "R4"
+        name: "Robotics for Training Nurses"
+        text: "The Robotics Train-the-Trainer module for Nurses focusses on how to properly instruct the learning modules to nurses. It will identify the essential components of an effective training session and highlight the role of the nurse during robotic assisted surgery in relation to the offered training methodology."
+        type: "On-site"
+        applicable: ["Trainers"]
+
+# Partner logos. url is optional (logo without a link).
+partners:
+  - { logo: "/assets/img/gesea4eu/partners/esge.webp", url: "https://esge.org/" }
+  - { logo: "/assets/img/gesea4eu/partners/liege.webp", url: "https://www.citadelle.be/Services/Services-medicaux/Centre-d-endometriose/Accueil.aspx" }
+  - { logo: "/assets/img/gesea4eu/partners/torino.webp" }
+  - { logo: "/assets/img/gesea4eu/partners/mis-leuven.webp", url: "https://www.mis-academy.be/" }
+  - { logo: "/assets/img/gesea4eu/partners/naples.webp", url: "https://www.geseanapoli.com/" }
+  - { logo: "/assets/img/gesea4eu/partners/pius-hospital.webp", url: "https://www.pius-hospital.de/" }
+  - { logo: "/assets/img/gesea4eu/partners/maribor.webp", url: "https://www.mf.um.si/si/" }
+  - { logo: "/assets/img/gesea4eu/partners/nicosia.webp", url: "https://www.womana.com.cy/en/" }
+  - { logo: "/assets/img/gesea4eu/partners/cetec.webp", url: "https://www.cuf.pt/cuf-academic-center" }
+  - { logo: "/assets/img/gesea4eu/partners/thessaloniki.webp", url: "https://www.med.auth.gr/en" }
+  - { logo: "/assets/img/gesea4eu/partners/ebcog-uems.webp", url: "https://ebcog.eu/" }
+  - { logo: "/assets/img/gesea4eu/partners/hospital-da-luz.webp", url: "https://www.hospitaldaluz.pt/learninghealth/pt" }
+  - { logo: "/assets/img/gesea4eu/partners/gemelli.webp", url: "https://www.policlinicogemelli.it/" }
+  - { logo: "/assets/img/gesea4eu/partners/sergs.webp", url: "https://www.sergs.org/" }
+  - { logo: "/assets/img/gesea4eu/partners/cice.webp", url: "https://www.cice.fr/index.php/fr/" }
+  - { logo: "/assets/img/gesea4eu/partners/atit.webp", url: "https://atit.be/" }
+
+# Photo albums, newest first. Photos are in assets/img/gesea4eu/gallery/
+gallery:
+  - title: "GESEA4EU Second General Meeting"
+    text: |
+      The GESEA4EU project marked another milestone with its second general meeting, held on the 2nd and 3rd of November in Leuven, Belgium, gathering representatives from all 16 project partners. The meeting provided a platform for in-depth discussions and updates on various work packages integral to the project's success.
+    photos:
+      - "/assets/img/gesea4eu/gallery/gal1-1.webp"
+      - "/assets/img/gesea4eu/gallery/gal1-2.webp"
+      - "/assets/img/gesea4eu/gallery/gal1-3.webp"
+      - "/assets/img/gesea4eu/gallery/gal1-4.webp"
+      - "/assets/img/gesea4eu/gallery/gal1-5.webp"
+      - "/assets/img/gesea4eu/gallery/gal1-6.webp"
+  - title: "ESGE 32nd Annual Congress"
+    text: |
+      In the first week of October 2023, over 2000 passionate professionals came together to advance gynaecological endoscopy, with engaging sessions, workshops, live surgeries, and presentations.
+
+      It was a historic moment as we proudly unveiled the groundbreaking GESEA4EU program. This two-year initiative is the evolution of the renowned GESEA programme by ESGE. We are thrilled to have had the opportunity to introduce GESEA4EU to this expansive audience deeply invested in standardizing gynaecological endoscopic training. This marks a significant milestone in advancing our field and ensuring high-quality care for patients worldwide.
+    photos:
+      - "/assets/img/gesea4eu/gallery/gal2-1.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-2.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-3.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-4.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-5.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-6.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-7.webp"
+      - "/assets/img/gesea4eu/gallery/gal2-8.webp"
+  - title: "First Train the Trainer Pilot course in Leuven"
+    text: |
+      On 7 June 2023, ESGE organised a Train the Trainers Pilot Course which is the first step of the project’s planned Training Activities. Here you can find the photos of this session that took place at ESGE office in Leuven, Belgium.
+    photos:
+      - "/assets/img/gesea4eu/gallery/gal3-1.webp"
+      - "/assets/img/gesea4eu/gallery/gal3-2.webp"
+      - "/assets/img/gesea4eu/gallery/gal3-3.webp"
+      - "/assets/img/gesea4eu/gallery/gal3-4.webp"
+      - "/assets/img/gesea4eu/gallery/gal3-5.webp"
+      - "/assets/img/gesea4eu/gallery/gal3-6.webp"
+  - title: "GESEA4EU Kick-off Meeting 2nd – 3rd February Leuven, Belgium"
+    text: |
+      We are excited to share that the kick-off meeting of the GESEA4EU project with all partners took place in Belgium beginning of February.
+    photos:
+      - "/assets/img/gesea4eu/gallery/gal4-1.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-2.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-3.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-4.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-5.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-6.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-7.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-8.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-9.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-10.webp"
+      - "/assets/img/gesea4eu/gallery/gal4-11.webp"

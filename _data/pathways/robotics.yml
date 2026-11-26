@@ -1,0 +1,91 @@
+# ============================================================
+# ROBOTICS PATHWAY PAGE  (website address: /pathways/robotics/)
+# Same structure as _data/pathways/migs.yml (see the notes at the top of that file).
+# ============================================================
+
+theme: rob
+
+intro:
+  title: "Acquire your GESEA Robotics Certificate and Diploma"
+  subtitle: "Gynaecological Robotics Surgeon"
+  text: "The GESEA Robotics Pathway allows you to acquire your Diploma of Gynaecological Robotics Surgeon."
+
+# Shown above the table on the right
+panel_note: "Obtain the mandatory GESEA Certificates in L1 and L2 or obtain a bypass prior to GESEA Robotics Certification"
+or_label: "OR"
+
+journey:
+  - number: "1"
+    title: "GESEA Level 1 Certificate"
+    text: "The first step is to get your [GESEA Level 1 Certificate](/pathways/migs/#level-1) proving your general endoscopic knowledge and acquirement of basic endoscopic psychomotor skills to get ready to start training in the Operating Room"
+    more: "/pathways/migs/#level-1"
+    table: l1
+  - number: "2"
+    title: "GESEA Level 2 MIGS or ECRES Certificate"
+    text: "The second step is to successfully complete the GESEA Level 2 MIGS/ECRES exam and be awarded the [GESEA Level 2 MIGS Certificate](/pathways/migs/#level-2) or [GESEA Level 2 ECRES Certificate.](/pathways/ecres/#level-2) This certificate indicates that you have mastered the knowledge and more advanced psychomotor skills as needed to start performing basic endoscopic procedures in the Operating Room."
+    more: "/pathways/migs/#level-2"
+    tables: [l2_migs, l2_ecres]
+  - number: "3"
+    title: "GESEA Robotics Certificate"
+    text: "The third step is to successfully complete the GESEA Robotics exam and be awarded the GESEA Robotics Certificate. This certificate indicates that you have mastered the knowledge and more advanced psychomotor skills as needed to start performing basic endoscopic procedures with a robot. Finally, when you have the necessary surgical experience and related competence, you may apply for the GESEA Robotics Diploma."
+    more: "#certificate"
+    table: robotics
+    highlight: [el, ps, cert]
+  - number: "4"
+    title: "GESEA Robotics Diploma"
+    text: "Finally, when you have the necessary surgical experience and related competence, you may apply for the GESEA Robotics Diploma. The GESEA Robotics Diploma is a video-based expert-reviewed diploma where surgical skills are evaluated by performing a select number of laparoscopic and hysteroscopic procedures."
+    more: "#diploma"
+    table: robotics
+    highlight: [exp, dip]
+
+sections:
+  - id: certificate
+    alt: true
+    title: "GESEA Robotics Certificate"
+    subtitle: "Start performing basic endoscopic procedures"
+    prerequisites:
+      title: "Prerequisites for GESEA Robotics Certification"
+      items:
+        - title: "GESEA Level 1 Certificate"
+          andor: "And/or"
+          routes:
+            - |
+              Bypass to **GESEA Level 2 MIGS Certification** (within one year of Robotics Certification) if you meet this criteria:
+
+              - Must provide a letter signed by head of department, confirming applicant has experience in major surgeries in both laparoscopy and hysteroscopy
+              - Must provide proof of attendance at a recognised suturing workshop
+            - |
+              Or Bypass directly to **GESEA Robotics Certification** if you meet this criteria:
+
+              - Must provide a proof of performance of [100 x Laparoscopic and 50 Hysteroscopic surgeries as first surgeon](https://gesea.eu/wp-content/uploads/2025/06/BYPASS-To-GESEA-Robotics_LASTTHYSTT-Procedure.pdf)
+              - Must provide a letter signed by head of department, confirming 5 years of experience since graduation
+              - Must provide proof of attendance at a recognised suturing workshop
+              - Must provide proof of attendance at 5 recognised congresses
+          after: "**Note:** [GESEA eLearning for all Levels should be completed](https://academy.esge.org/)"
+        - title: "GESEA Level 2 MIGS/ECRES E-Learning Certificate of Completion"
+          text: "When applying for a GESEA Robotics Certification, submit your Certificate of Completion of [GESEA Level 1, GESEA Level 2 MIGS/ECRES and GESEA Robotics eLearning](https://academy.esge.org/) together with your application or bring it with you at the certification session."
+    steps:
+      - title: "Knowledge Acquisition"
+        text: "Complete the theoretical tutorials and quizzes of [GESEA Level 2 MIGS/ECRES e-learning](https://academy.esge.org/) on ESGE Academy and [the GESEA Robotics e-Learning module.](https://academy.esge.org/p/esge-academy-membership-content)"
+      - title: "Practical Skill Training"
+        text: "Develop your practical skills by exercising with the [GESEA Training Tools](https://gesea.eu/training-tools) at your centre, in one of the [Accredited GESEA Training or Diploma Centres,](/centres/) or during the [ESGE Annual Congress](https://esge.org/congress/) and other national congresses where GESEA is present."
+      - title: "Certification"
+        text: "Take the GESEA Robotics exam at an accredited GESEA Diploma Centre or during an official GESEA Event. The certification session consists of"
+        exam:
+          - "a theoretical exam, TESTT2, which contains 25 multiple choice questions on instrumentation, different endoscopic techniques and complication management, and"
+          - "To validate your psychomotor skills with the robot, successfully complete the robotic skills exercises, SSRT."
+
+  - id: diploma
+    title: "GESEA Robotics Diploma"
+    subtitle: "Validate your surgical competence"
+    prerequisites:
+      title: "Prerequisites for GESEA Robotics Diploma"
+      items:
+        - title: "Robotics Certificate"
+          text: "You have acquired the GESEA Robotics Certificate."
+        - title: "ESGE Membership"
+          text: "You are a member of the ESGE, either individually or through one of its corporate member societies. If you are not yet, [become a member](https://esge.org/membership/) now."
+    steps:
+      - title: "Surgical Competence"
+        caption: "To apply for your Robotics Diploma:"
+        badge: "The Robotics Diploma is currently under development."

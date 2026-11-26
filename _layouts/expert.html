@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{%- comment -%} Expert Level diploma pages (Oncology, Urogynaecology). The words are in _data/pathways/<page.pathway>.yml {%- endcomment -%}
+{%- assign d = site.data.pathways[page.pathway] -%}
+<main id="app" class="pd-onco">
+  {% include pathways/hero.html tab=page.tab %}
+  <section class="pw-sec" aria-labelledby="x0">
+    <div class="wrap">
+      {% include pathways/title.html id="x0" title=d.title %}
+      {% if d.logos %}<div class="pd-logos rv">{% for l in d.logos %}<img src="{{ l.src | relative_url }}" alt="{{ l.alt }}">{% endfor %}</div>{% endif %}
+
+      <div class="pd-pre rv">
+        <h3>{{ d.prerequisites.title }}</h3>
+        {%- for it in d.prerequisites.items %}
+        {% if it.or_before %}<div class="pd-or-sep">{{ it.or_before }}</div>{% endif %}
+        <div class="pd-req"><div><h4>{{ it.title }}</h4>{% if it.text %}{% include md.html text=it.text %}{% endif %}</div></div>
+        {%- endfor %}
+      </div>
+
+      <div class="pw-levels">
+        <nav class="pw-idx" aria-label="Steps">
+          {%- for s in d.steps %}<a href="#s{{ forloop.index }}"{% if forloop.first %} class="on"{% endif %}><i>{{ forloop.index }}</i>{{ s.title }}</a>{% endfor %}
+        </nav>
+        <ol class="pd-tl">
+          {%- for s in d.steps %}
+          <li class="rv" id="s{{ forloop.index }}"><span class="pd-num">{{ forloop.index }}</span><div class="pd-card"><h3>{{ s.title }}</h3>
+            {%- if s.lead %}<p class="pd-lead2">{{ s.lead }}</p>{% endif %}
+            {%- if s.text %}{% include md.html text=s.text %}{% endif %}
+            {%- if s.criteria %}<div class="pd-crit"><h4>{{ s.criteria.title }}</h4>{% include md.html text=s.criteria.text %}
+              {%- if s.criteria.videos %}<div class="pd-vids">{% for v in s.criteria.videos %}<a {% include href.html url=v.url %}>{{ v.label }}</a>{% endfor %}</div>{% endif %}</div>{% endif %}
+            {%- if s.note %}<p class="note">{{ s.note }}</p>{% endif %}
+            {%- if s.after %}{% include md.html text=s.after %}{% endif %}
+            {%- if s.button %}<p><a class="btn solid sm" style="color:#fff;text-decoration:none" {% include href.html url=s.button.url %}>{{ s.button.label }} <span class="ar">→</span></a></p>{% endif %}
+          </div></li>
+          {%- endfor %}
+        </ol>
+      </div>
+
+      {%- if d.fee %}{% assign f = d.fee %}
+      <div class="pd-fee rv">
+        <h3>{{ f.title }}</h3>
+        <table>
+          <thead><tr><th>{{ f.head[0] }}</th><th>{{ f.head[1] }}</th><th>{{ f.head[2] }}</th></tr></thead>
+          <tbody>
+            {% if f.criteria %}<tr class="sub"><td colspan="3">{{ f.criteria }}</td></tr>{% endif %}
+            {%- for r in f.rows %}<tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td></tr>{% endfor %}
+            {% if f.footnote %}<tr class="foot"><td>{{ f.footnote[0] }}</td><td></td><td>{{ f.footnote[1] }}</td></tr>{% endif %}
+            {% if f.note %}<tr class="sub"><td colspan="3">{{ f.note }}</td></tr>{% endif %}
+          </tbody>
+        </table>
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+</main>

@@ -7,7 +7,7 @@
 {%- else -%}
 <footer class="foot">
   <div class="in wrap">
-    <span>{{ f.copyright }} · Centre content from esge.org</span>
+    <span>{{ f.copyright }} · {{ page.footer_note | default: "Centre content from esge.org" }}</span>
     <nav aria-label="Footer"><a href="{{ site.sessions.calendar_url }}" target="_blank" rel="noopener">Educational Calendar</a>{% for l in f.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}</nav>
   </div>
 </footer>

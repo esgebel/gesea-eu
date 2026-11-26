@@ -1,0 +1,126 @@
+# ============================================================
+# ECRES PATHWAY PAGE  (website address: /pathways/ecres/)
+# Same structure as _data/pathways/migs.yml (see the notes at the top of that file).
+# ============================================================
+
+theme: ecres
+
+intro:
+  title: "Acquire your GESEA ECRES Diploma"
+  subtitle: "Reproductive Endoscopic Surgeons"
+  text: "The GESEA ECRES Pathway allows you to acquire your ESHRE Reproductive Endoscopic Surgeon diploma (ECRES)."
+
+journey:
+  - number: "1"
+    title: "Level 1 Certificate"
+    text: "The first step is to get your [GESEA Level 1 Certificate](#level-1) proving your general endoscopic knowledge and acquirement of basic endoscopic psychomotor skills to get ready to start training in the Operating Room."
+    more: "#level-1"
+    more_label: "More Details"
+    table: l1
+  - number: "2"
+    title: "Level 2 ECRES Certificate"
+    text: "The second step is to successfully complete the [GESEA Level 2 ECRES Certificate.](#level-2) This certificate indicates that you have mastered the knowledge and more advanced psychomotor skills as needed to start performing basic endoscopic procedures related to reproductive endoscopic surgery in the Operating Room."
+    more: "#level-2"
+    more_label: "More Details"
+    table: l2_ecres
+  - number: "3"
+    title: "ECRES Diploma"
+    text: "Finally, when you have the necessary surgical experience and related competence, you may apply for the [Level 2 ECRES Diploma](#diploma) as issued by [ESHRE](https://www.eshre.eu/). The GESEA ECRES Diploma is a video-based expert-reviewed diploma where surgical skills are evaluated by performing a select number of laparoscopic and hysteroscopic procedures."
+    more: "#diploma"
+    more_label: "More Details"
+    table: l2_ecres
+    highlight: [exp, dip]
+  - robotics: true
+    tag: "OPTIONAL"
+    title: "Robotics"
+    text: "Additional step (not obligatory) is to obtain Robotics certification and diploma after finalising level 2 certification."
+    more: "/pathways/robotics/"
+    more_label: "More Details"
+    table: robotics
+
+sections:
+  - id: level-1
+    alt: true
+    title: "GESEA Level 1 Certificate"
+    subtitle: "Your entry point into the Operating Room"
+    prerequisites:
+      title: "Prerequisites for GESEA Level 1 Certification"
+      items:
+        - title: "GESEA Level 1 E-Learning Certificate of Completion"
+          text: "When applying for a level 1 certification, submit your Certificate of Completion together with your application or bring it with you at the certification session."
+    steps:
+      - title: "Knowledge Acquisition"
+        text: "Sign up for the [GESEA Level 1 e-learning](https://academy.esge.org/) on ESGE Academy and complete the theoretical tutorials and quizzes of level 1. You will be awarded with a certificate of completion."
+      - title: "Practical Skill Training"
+        text: "Develop your practical skills by exercising with the [GESEA Training Tools](https://gesea.eu/training-tools) at your centre, in one of the [Accredited GESEA Training or Diploma Centres](/centres/), or during [upcoming GESEA ECRES Events](https://www.eshre.eu/Accreditation-and-Certification/ECRES) and other national congresses where GESEA is present."
+      - title: "Certification"
+        text: "Take the GESEA Level 1 exam at an accredited GESEA Diploma Centre or during an official GESEA Event. The certification session consists of:"
+        exam:
+          - "a theoretical exam, TESTT1\\*, which contains 50 multiple choice questions on instrumentation, OR organisation, anatomy, different endoscopic techniques and complication management"
+          - "three practical exams, [LASTT1](https://gesea.eu/training-tools/lastt/), [SUTT1](https://gesea.eu/training-tools/sutt/) and [HYSTT1.](https://gesea.eu/training-tools/hystt/)"
+        note: "**Please be aware that not all of the multiple choice questions in TESTT1 are included in the content of the preparatory tutorials on ESGE Academy. TESTT1 also contains additional questions in line with the expected knowledge level for surgeons participating in Level 1 of the GESEA Educational Programme."
+
+  - id: level-2
+    title: "GESEA Level 2 ECRES Certificate"
+    subtitle: "Start performing basic endoscopic procedures"
+    prerequisites:
+      title: "Prerequisites for Level 2 GESEA ECRES Certification"
+      items:
+        - title: "GESEA Level 1 Certificate"
+          text: |
+            First acquire the GESEA Level 1 Certificate before you can apply for the next level. Provide your certificate as proof that you have completed the first level upon registration for a second level certification session.
+
+            You can [apply for a bypass](mailto:certification@eshre.eu) if you meet the following criteria:
+
+            - Must provide a letter signed by head of department, confirming applicant has experience in major surgeries in both laparoscopy and hysteroscopy
+            - Must provide proof of attendance at a recognised suturing workshop
+
+            Note that you still need to complete the [GESEA Level 1 e-Learning](https://academy.esge.org/) on ESGE Academy.
+        - title: "GESEA Level 2 ECRES E-Learning Certificate of Completion"
+          text: "When [applying for a Level 2 ECRES Certification](https://www.eshre.eu/Accreditation-and-Certification/ECRES), submit your Certificate of Completion together with your application or bring it with you at the certification session."
+    steps:
+      - title: "Knowledge Acquisition"
+        text: "Complete the theoretical tutorials and quizzes of [GESEA Level 2 ECRES e-learning](https://academy.esge.org/) on ESGE Academy and the robot-specific e-learning module."
+      - title: "Practical Skill Training"
+        text: "Develop your practical skills by exercising with the [GESEA Training Tools](https://gesea.eu/training-tools) at your centre, in one of the [Accredited GESEA Training or Diploma Centres](/centres/), or during [upcoming GESEA ECRES Events](https://www.eshre.eu/Accreditation-and-Certification/ECRES) and other national congresses where GESEA is present."
+      - title: "Certification"
+        text: "Take the GESEA Level 2 ECRES exam during the [upcoming GESEA ECRES Events](https://www.eshre.eu/Accreditation-and-Certification/ECRES). The certification session consists of"
+        exam:
+          - "a theoretical exam, TESTT2, which contains 50 multiple choice questions on reproductive endoscopic surgery, and"
+          - "three practical exams, [LASTT2](https://gesea.eu/training-tools/lastt/), [SUTT2](https://gesea.eu/training-tools/sutt/) and [HYSTT2](https://gesea.eu/training-tools/hystt/)."
+        note: "*Please be aware that not all of the multiple choice questions in TESTT2 are included in the content of the preparatory tutorials on ESGE Academy. TESTT2 also contains additional questions in line with the expected knowledge level for surgeons participating in Level 2 of the GESEA Educational Programme."
+
+  - id: diploma
+    alt: true
+    title: "GESEA ECRES Diploma"
+    subtitle: "Validate your surgical competence"
+    prerequisites:
+      title: "Prerequisites for GESEA ECRES Diploma"
+      items:
+        - title: "ECRES Certificate"
+          text: "You have acquired the GESEA Level 2 ECRES Certificate."
+        - title: "ESHRE Membership"
+          text: "You are a member of the [ESHRE](https://www.eshre.eu/Accreditation-and-Certification/ECRES). If you are not yet, [become a member](https://www.eshre.eu/Membership) now."
+        - title: "Laparoscopic and Hysteroscopic procedures"
+          text: |
+            [Mandatory and Optional Laparoscopic and Hysteroscopic Procedure](https://gesea.eu/wp-content/uploads/2023/06/ECRES-GESEA-LEVEL-2-DIPLOMA-APPLICATION-FORM-and-surgical-clinical-practice-curriculum.pdf)
+
+            [*Apply here for GESEA ECRES diploma*](https://www.eshre.eu/Accreditation-and-Certification/ECRES)
+    steps:
+      - title: "Surgical Competence"
+        caption: "To apply for your GESEA ECRES Diploma:"
+        text: "You have to acquire the necessary surgical competence both in laparoscopy and in hysteroscopy. You must provide your documented testimony of surgical clinical practice curriculum a maximum period of 5 years together with supporting documentation to [certification@eshre.eu.](mailto:certification@eshre.eu)"
+      - text: "The next step is to submit the schedule via [certification@eshre.eu](mailto:certification@eshre.eu) of your first procedure stating the date when you will perform the actual procedure, you cannot use existing recorded video material. There are five different procedures to schedule with a total cost of 500 euro. As soon as you have scheduled your first procedure, you have entered the ECRES Diploma programme."
+      - text: |
+          After you have performed a procedure, you have 48 hours to submit the video of the procedure and the report of the anaesthesiologist via WeTransfer to [certification@eshre.eu](mailto:certification@eshre.eu).
+
+          When the ESHRE has received all your recorded procedures, they will be expert-reviewed and rated. [Apply now for your GESEA ECRES Diploma through the ESHRE website.](https://www.eshre.eu/Accreditation-and-Certification/ECRES)
+
+robotics_cta:
+  title: "Acquire your GESEA Robotics Diploma (Optional)"
+  subtitle: "Validate your surgical competence"
+  text:
+    - "The GESEA Robotics Pathway allows you to acquire your Diploma of Gynaecological Robotics Surgeon."
+    - "For more details, click the button below"
+  button: "Click Here"
+  url: "/pathways/robotics/"

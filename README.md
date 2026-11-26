@@ -26,6 +26,13 @@ If something goes wrong, open the file's **History** and restore the previous ve
 | Every heading and paragraph on the home page (hero, philosophy, OSP, assessment, centres, community, final) | `_data/home.yml` |
 | Text inside the GESEA Pathway (each stage, the scrolling steps, the Expert Level disciplines) | `_data/pathway.yml` |
 | The four programmes in "A structured path to certification" | `_data/certification.yml` |
+| Pathways overview page (`/pathways/`) | `_data/pathways/overview.yml` |
+| MIGS, ECRES and Robotics pathway pages | `_data/pathways/migs.yml`, `ecres.yml`, `robotics.yml` |
+| Expert Level Oncology and Urogynaecology pages | `_data/pathways/oncology.yml`, `urogynaecology.yml` |
+| The requirement tables (E-learning, Psychomotor skills, Certification...) used on all Pathways pages | `_data/pathways/tables.yml` |
+| Tabs under the title of the Pathways pages | `_data/pathways/tabs.yml` |
+| GESEA4EU menus, objectives, learning modules, partner logos, photo albums, social links | `_data/gesea4eu.yml` |
+| GESEA4EU page texts (About, Concept and Methodology, Training Methodology, Events, Contact Us...) | `gesea4eu/*.md` |
 | The introduction on the GESEA Centres page | `centres/index.md` |
 | One centre's page (description, team, address, website, logo) | `_centres/<centre-name>.md` |
 | Site name, description, sessions settings | `_config.yml` |
@@ -97,6 +104,26 @@ You do **not** enter sessions on this website. Each centre page reads them live 
 - Only events with "GESEA" in the title, category or organiser are shown. This can be switched off in `_config.yml` (`only_gesea: false`).
 - If the calendar cannot be reached, the site shows a saved copy (`assets/data/sessions-snapshot.json`, dated) and says so under the heading.
 
+### Pathways pages
+
+The Pathways section has an overview page (`/pathways/`), one page per pathway (`/pathways/migs/`, `/pathways/ecres/`, `/pathways/robotics/`) and the Expert Level pages (`/pathways/gesea-migs-oncology/`, `/pathways/gesea-migs-urogynaecology/`). All their words are in `_data/pathways/`, one file per page. The top of each file explains its blocks.
+
+- Text can use markdown: `**bold**`, `*italic*`, `[link text](https://...)` and lists.
+- A link that starts with `/` stays on this website, for example `[MIGS](/pathways/migs/)`. A link that starts with `https://` opens in a new tab.
+- An upload link is written as `[(upload here)](https://...){: .pd-up}` and is shown as a small button.
+- The tables with E-learning, Psychomotor skills, Certification, Experience and Diploma are written once in `_data/pathways/tables.yml` and reused by all pages. Change a table there and it changes everywhere.
+- On the MIGS page, the Expert Level buttons without a `url` are shown greyed out. Add a `url` when the page exists.
+
+To add a new Expert Level page (for example Neuropelveology): copy `_data/pathways/oncology.yml` to a new file and change the words, then copy the folder `pathways/gesea-migs-oncology/` to a new folder, open its `index.md` and change `pathway:` and `title:` to the new name. Finally add the `url` to the button in `_data/pathways/migs.yml`.
+
+### GESEA4EU pages
+
+The GESEA4EU section starts at `/gesea4eu/`. The menu, the lists and the block at the bottom of every page are in `_data/gesea4eu.yml`. The longer texts are in the `gesea4eu/` folder, one `.md` file per page: edit the text below the second `---` line. Images are in `assets/img/gesea4eu/` (`partners/`, `gallery/`, `figures/`).
+
+- Add a partner: upload the logo to `assets/img/gesea4eu/partners/` and add a line under `partners:` in `_data/gesea4eu.yml`.
+- Add photos: upload them to `assets/img/gesea4eu/gallery/` and add their paths under the album in `gallery:`. A new album is a new block with `title`, `text` and `photos`.
+- The pages Project Update, Project Output and News show a yellow "Content placeholder" note because these pages have no content on gesea.eu yet. Replace the note with the text when it is available.
+
 ### OSP screenshots
 
 1. Upload the images to `assets/img/osp/`.
@@ -127,13 +154,20 @@ The shape of the diagram (boxes, arrows, colours) is code. Ask the developer bef
 _config.yml            site settings, centres collection, defaults
 _data/                 all editable text (YAML)
 _centres/              one Markdown file per centre (collection, output: true)
-_layouts/              default, home, centres (list), centre (detail)
+_layouts/              default, home, centres (list), centre (detail), pathways-overview, pathway, expert, gesea4eu
 _includes/             head, nav, footer, icons, OSP block, world-map SVG paths, centres JSON
-assets/css/            home.css (home page), centres.css (centres pages)
+assets/css/            home.css (home page), centres.css (centres pages, and the base of all inner pages)
+                       pathways.css, pathway-detail.css, gesea4eu.css (loaded on top of centres.css with extra_css)
 assets/js/common.js    menu, smooth scroll, ESGE calendar loader + matching
 assets/js/pathway.js   pathway diagram (shape in code, words from _data/pathway.yml)
 assets/js/home.js      reveals, certification scroll, OSP tabs, centres map, globe, logo intro
 assets/js/centres.js   list filters, sessions, locator map
+assets/js/pathways.js  reveal on scroll, side index of levels / steps
+assets/js/pathway-detail.js  journey steps and their tables, MIGS / ECRES switch
+assets/js/gesea4eu.js  gallery photo viewer
+_includes/md.html      turns markdown from _data files into HTML (baseurl for / links, new tab for http links)
+_includes/href.html    link helper for buttons from _data files
+pathways/, gesea4eu/   the new pages (front matter only, or the page text in markdown)
 assets/data/           land-110m.geojson (globe + locator map), sessions-snapshot.json
 assets/img/            logo parts, centre logos, OSP screenshots
 ```

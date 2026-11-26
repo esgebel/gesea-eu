@@ -1,0 +1,4 @@
+# Tabs under the title of every Pathways page. Order here = order on the website.
+- { label: "Overview", url: "/pathways/" }
+- { label: "MIGS Pathway", url: "/pathways/migs/" }
+- { label: "ECRES Pathway", url: "/pathways/ecres/" }
